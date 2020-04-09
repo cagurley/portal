@@ -14,10 +14,11 @@
       </p>
     </div>
     <div class="dash">
+      {% if act.size > 0 %}
       <div class="dash-section">
         <h3 class="dash-header">ACT</h3>
         <div class="dash-body">
-          {% for score in act_scores %}
+          {% for score in act %}
           <div class="dash-row">
             <div class="dash-item fsl-6">
               <div class="dash-label">Test Date</div>
@@ -40,13 +41,122 @@
               <div class="dash-content">{{score.score3}}</div>
             </div>
             <div class="dash-item">
-              <div class="dash-label">Sci Reasoning</div>
+              <div class="dash-label">Science</div>
               <div class="dash-content">{{score.score4}}</div>
             </div>
           </div>
           {% endfor %}
         </div>
       </div>
+      {% endif %}
+      {% if satr.size > 0 %}
+      <div class="dash-section">
+        <h3 class="dash-header">SAT R</h3>
+        <div class="dash-body">
+          {% for score in satr %}
+          <div class="dash-row">
+            <div class="dash-item fsl-6">
+              <div class="dash-label">Test Date</div>
+              <div class="dash-content">{{score.date}}</div>
+            </div>
+            <div class="dash-item fsl-6">
+              <div class="dash-label">Total</div>
+              <div class="dash-content">{{score.total}}</div>
+            </div>
+            <div class="dash-item">
+              <div class="dash-label">ERW</div>
+              <div class="dash-content">{{score.score1}}</div>
+            </div>
+            <div class="dash-item">
+              <div class="dash-label">Math</div>
+              <div class="dash-content">{{score.score2}}</div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+      {% endif %}
+      {% if sati.size > 0 %}
+      <div class="dash-section">
+        <h3 class="dash-header">SAT I</h3>
+        <div class="dash-body">
+          {% for score in sati %}
+          <div class="dash-row">
+            <div class="dash-item fsl-6">
+              <div class="dash-label">Test Date</div>
+              <div class="dash-content">{{score.date}}</div>
+            </div>
+            <div class="dash-item fsl-6">
+              <div class="dash-label">Total</div>
+              <div class="dash-content">{{score.total}}</div>
+            </div>
+            <div class="dash-item">
+              <div class="dash-label">Reading</div>
+              <div class="dash-content">{{score.score1}}</div>
+            </div>
+            <div class="dash-item">
+              <div class="dash-label">Math</div>
+              <div class="dash-content">{{score.score2}}</div>
+            </div>
+            <div class="dash-item">
+              <div class="dash-label">Writing</div>
+              <div class="dash-content">{{score.score3}}</div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+      {% endif %}
+      {% if ap.size > 0 %}
+      <div class="dash-section">
+        <h3 class="dash-header">AP</h3>
+        <div class="dash-body">
+          {% for score in ap %}
+          <div class="dash-row">
+            <div class="dash-item fsl-12">
+              <div class="dash-label">Subject</div>
+              <div class="dash-content">{{score.subtype}}</div>
+            </div>
+            <div class="dash-item">
+              <div class="dash-label">Test Date</div>
+              <div class="dash-content">{{score.date}}</div>
+            </div>
+            <div class="dash-item">
+              <div class="dash-label">Score</div>
+              <div class="dash-content">{{score.total}}</div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+      {% endif %}
+      {% if other_scores.size > 0 %}
+      <div class="dash-section">
+        <h3 class="dash-header">Other</h3>
+        <div class="dash-body">
+          {% for score in other_scores %}
+          <div class="dash-row">
+            <div class="dash-item fsl-6">
+              <div class="dash-label">Test</div>
+              <div class="dash-content">{{score.type}}</div>
+            </div>
+            <div class="dash-item fsl-6">
+              <div class="dash-label">Type</div>
+              <div class="dash-content">{{score.subtype}}</div>
+            </div>
+            <div class="dash-item">
+              <div class="dash-label">Test Date</div>
+              <div class="dash-content">{{score.date}}</div>
+            </div>
+            <div class="dash-item">
+              <div class="dash-label">Score</div>
+              <div class="dash-content">{{score.total}}</div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+      {% endif %}
     </div>
     <script
       src="https://code.jquery.com/jquery-3.4.1.min.js"
