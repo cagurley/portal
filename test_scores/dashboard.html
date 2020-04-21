@@ -16,7 +16,7 @@
     <div class="dash">
       {% if act.size > 0 %}
       <div class="dash-section">
-        <h3 class="dash-header">ACT</h3>
+        <h3 class="dash-header" title="Display ACT scores" tabindex="0">ACT</h3>
         <div class="dash-body">
           {% for score in act %}
           <div class="dash-row">
@@ -51,7 +51,7 @@
       {% endif %}
       {% if satr.size > 0 %}
       <div class="dash-section">
-        <h3 class="dash-header">SAT R</h3>
+        <h3 class="dash-header" title="Display SAT scores" tabindex="0">SAT</h3>
         <div class="dash-body">
           {% for score in satr %}
           <div class="dash-row">
@@ -78,7 +78,7 @@
       {% endif %}
       {% if sati.size > 0 %}
       <div class="dash-section">
-        <h3 class="dash-header">SAT I</h3>
+        <h3 class="dash-header" title="Display SAT (old) scores" tabindex="0">SAT (old)</h3>
         <div class="dash-body">
           {% for score in sati %}
           <div class="dash-row">
@@ -109,7 +109,7 @@
       {% endif %}
       {% if ap.size > 0 %}
       <div class="dash-section">
-        <h3 class="dash-header">AP</h3>
+        <h3 class="dash-header" title="Display AP scores" tabindex="0">AP</h3>
         <div class="dash-body">
           {% for score in ap %}
           <div class="dash-row">
@@ -132,7 +132,7 @@
       {% endif %}
       {% if other_scores.size > 0 %}
       <div class="dash-section">
-        <h3 class="dash-header">Other</h3>
+        <h3 class="dash-header" title="Display other test scores" tabindex="0">Other</h3>
         <div class="dash-body">
           {% for score in other_scores %}
           <div class="dash-row">
