@@ -1,5 +1,35 @@
 #portal_main {
+  color: #000;
   font-family: "Gotham SSm A", "Gotham SSm B", "Open Sans", Helvetica, Arial, sans-serif;
 }
 
-/*  */
+#portal_main * h1 {
+  color: #AD0000;
+  font-weight: 800;
+  font-size: 32px;
+}
+
+#portal_main * h2 {
+  color: #AD0000;
+  font-weight: 700;
+  font-size: 32px;
+}
+
+#portal_main * h3 {
+  color: #252525;
+  font-weight: 500;
+  font-size: 18px;
+}
+
+#portal_main * h4 {
+  color: #252525;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+#portal_main * h5 {
+  color: #939393;
+  font-weight: 700;
+  font-size: 16px;
+  text-transform: uppercase;
+}
