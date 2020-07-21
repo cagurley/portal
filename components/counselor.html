@@ -1,0 +1,15 @@
+{% if staff.size > 0 %}
+<div class="p-section">
+  <img src="/images/{{staff[0].user}}.jpg" alt="Counselor portrait">
+  <h3>
+    {{staff[0].first}} {{staff[0].last}}
+    <span>{{ staff[0].title | upcase }}</span>
+  </h3>
+  <div>Question about your next steps? I'm here to help.</div>
+  <ul>
+    <li><a href="mailto:{{staff[0].email}}">{{staff[0].email}}</a></li>
+    <li><a href="tel:{{staff[0].phone}}">{{staff[0].phone}}</a></li>
+    <!--<li><a href="">Schedule a virtual appointment</a></li>-->
+  </ul>
+</div>
+{% endif %}
