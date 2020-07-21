@@ -7,7 +7,7 @@
   </h4>
   <div>Question about your next steps? I'm here to help.</div>
   <ul>
-    <li><a href="mailto:{{staff[0].email}}">{{staff[0].email}}</a></li>
+    <li><a href="mailto:{{ staff[0].email | url_encode }}">{{staff[0].email}}</a></li>
     <li><a href="tel:{{staff[0].phone}}">{{staff[0].phone}}</a></li>
     <!--<li><a href="">Schedule a virtual appointment</a></li>-->
   </ul>

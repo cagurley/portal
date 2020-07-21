@@ -2,43 +2,43 @@
   background: #FFF !important;
 }
 
-#portal_main {
+#p-main {
   color: #000;
   font-family: "Gotham SSm A", "Gotham SSm B", "Open Sans", Helvetica, Arial, sans-serif;
 }
 
-#portal_main * h1 {
+#p-main * h1 {
   color: #AD0000;
   font-weight: 800;
   font-size: 32px;
 }
 
-#portal_main * h2 {
+#p-main * h2 {
   color: #AD0000;
   font-weight: 700;
   font-size: 32px;
 }
 
-#portal_main * h3 {
+#p-main * h3 {
   color: #252525;
   font-weight: 500;
   font-size: 18px;
 }
 
-#portal_main * h4 {
+#p-main * h4 {
   color: #252525;
   font-weight: 500;
   font-size: 16px;
   text-transform: uppercase;
 }
 
-#portal_main * .staff_name {
+#p-main * .staff_name {
   display: block;
   color: #AD0000;
   text-transform: none;
 }
 
-#portal_main * .staff_title {
+#p-main * .staff_title {
   color: #939393;
 }
 
