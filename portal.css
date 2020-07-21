@@ -1,3 +1,7 @@
+#content {
+  background: #FFF !important;
+}
+
 #portal_main {
   color: #000;
   font-family: "Gotham SSm A", "Gotham SSm B", "Open Sans", Helvetica, Arial, sans-serif;
@@ -25,11 +29,19 @@
   color: #252525;
   font-weight: 500;
   font-size: 16px;
+  text-transform: uppercase;
 }
 
-#portal_main * h5 {
+#portal_main * .staff_name {
+  display: block;
+  color: #AD0000;
+  text-transform: none;
+}
+
+#portal_main * .staff_title {
   color: #939393;
-  font-weight: 700;
-  font-size: 16px;
-  text-transform: uppercase;
+}
+
+.d-none {
+  display: none;
 }
