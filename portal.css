@@ -1,5 +1,6 @@
 #content {
   background: #FFF !important;
+  padding: 0;
 }
 
 #page > .c_container-fixed.cr {
@@ -43,15 +44,38 @@
   font-weight: 700;
 }
 
+#p-main select {
+  padding: 5px;
+  border-radius: 3px;
+}
+
 #p-main li {
   padding-left: 0;
   margin-bottom: 0.25em;
 }
 
+#p-main .p-row {
+  display: flex;
+  flex-flow: row wrap;
+  padding-bottom: 20px;
+}
+
+#p-main .p-col {
+  flex: 0 0 100%;
+  max-width: 100%;
+  padding: 0 20px;
+  z-index: 1;
+}
+
+#p-main .p-section {
+  margin: 1rem 0;
+}
+
 #p-main .staff-portrait {
   display: block;
-  width: 300px;
-  margin: auto;
+  width: 250px;
+  height: 250px;
+  margin: 0 auto 1em;
   border-radius: 100%;
 }
 
@@ -90,4 +114,36 @@
 
 #p-main .d-none {
   display: none;
+}
+
+#p-main #p-banner {
+  position: relative;
+}
+
+#p-main #p-banner::before {
+  content: "";
+  position: absolute;
+  background: url("/images/clocktower_skyline.jpg") center/cover;
+  opacity: 0.15;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+@media (min-width: 992px) {
+  #p-main .p-col {
+    flex: 1 0 0;
+    padding: 0 45px;
+  }
+
+  #p-main .lg-4 {
+    flex: 0 0 calc(100% / 3);
+  }
+}
+
+@media (min-width: 1200px) {
+  #p-main .xl-3 {
+    flex: 0 0 25%;
+  }
 }

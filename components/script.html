@@ -1,0 +1,14 @@
+<script type="text/javascript">
+  'use strict';
+
+  var appSelect = document.querySelector("select[onchange][data-onchange='{ init: false }']");
+
+  if (appSelect) {
+    var appInfo = document.getElementById('p-appinfo');
+    var appText = document.createElement('p');
+    appText.textContent ='You are viewing information for the following application:';
+    appSelect.setAttribute('style', '');
+    appInfo.appendChild(appText);
+    appInfo.appendChild(appSelect);
+  }
+</script>

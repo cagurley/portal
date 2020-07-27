@@ -5,19 +5,28 @@
   </head>
   <body>
     <div id="p-main">
-      <div class="p-column">
-        {!intro.html!}
-        {!status.html!}
-        {!checklists.html!}
-        {!academics.html!}
-        {!activities.html!}
+      <div id="p-banner" class="p-row">
+        <div class="p-col">
+          {!intro.html!}
+          <div id="p-appinfo"><!-- Ghost div for conditional document restructure --></div>
+        </div>
+        <div class="p-col lg-4 xl-3"><!-- Ghost div for layout --></div>
       </div>
-      <div class="p-column">
-        <h3 class="d-none">Contact</h3>
-        {!counselor.html!}
-        {!links.html!}
-        {!contact.html!}
+      <div class="p-row">
+        <div class="p-col">
+          {!status.html!}
+          {!checklists.html!}
+          {!academics.html!}
+          {!activities.html!}
+        </div>
+        <div class="p-col lg-4 xl-3">
+          <h3 class="d-none">Contact</h3>
+          {!counselor.html!}
+          {!links.html!}
+          {!contact.html!}
+        </div>
       </div>
     </div>
+    {!script.html!}
   </body>
 </html>
