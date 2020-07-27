@@ -1,8 +1,8 @@
 {% if staff.size > 0 %}
-<div class="p-section">
-  <img class="staff-portrait" src="/images/{{staff[0].user}}.jpg" alt="Counselor portrait">
+<div id="p-counselor" class="p-section">
+  <img class="staff-portrait" src="/images/staff/{{staff[0].image}}.jpg" alt="Counselor portrait">
   <h4>
-    <span class="staff-name">{{staff[0].first}} {{staff[0].last}}</span>
+    <span class="staff-name">{{staff[0].preferred}} {{staff[0].last}}</span>
     <span class="staff-title">{{ staff[0].title | upcase }}</span>
   </h4>
   <div>Question about your next steps? I'm here to help.</div>
