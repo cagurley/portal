@@ -175,13 +175,15 @@
   display: block;
   width: 250px;
   height: 250px;
-  margin:  auto 1em;
+  margin:  40px auto 2em;
   border-radius: 100%;
 }
 
 #p-main .staff-name {
   display: block;
   color: #AD0000;
+  font-weight: 700;
+  font-size: 18px;
   text-transform: none;
 }
 

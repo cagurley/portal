@@ -1,18 +1,22 @@
 <script type="text/javascript">
   'use strict';
 
-  // $('.p-xcontrol').next().hide();
+  var tabbed = $('#p-main').find('.p-tabbed');
+  var navParents = tabbed.parent().parent();
+  tabbed.hide();
+  navParents.each(function () {
+    $(this).find('.p-tab').last().addClass('p-active');
+    $(this).find('.p-tabbed').last().show();
+  })
   $('.p-tab').on('click keypress', function () {
-    // var icon = $(this).find('.p-xicon > polygon');
-    // $(this).next().toggle();
+    var navParent = $(this).parent().parent();
+    var someTabbed = navParent.find('.p-tabbed');
+    var id = $(this).attr('id');
+    id = '#' + id + 'bed';
     $(this).siblings().removeClass('p-active');
     $(this).addClass('p-active');
-
-    // if (icon.attr('transform')) {
-    //   icon.removeAttr('transform');
-    // } else {
-    //   icon.attr('transform', 'rotate(180)');
-    // }
+    someTabbed.hide();
+    navParent.find(id + '.p-tabbed').show();
   });
   $('.p-tab').on('mouseover focusin', function () {
     $(this).addClass('p-focus');
