@@ -25,6 +25,7 @@
   color: #AD0000;
   font-weight: 700;
   font-size: 32px;
+  margin-top: 1.25em;
   margin-bottom: 20px;
 }
 
@@ -41,6 +42,10 @@
   text-transform: uppercase;
 }
 
+#p-main p {
+  line-height: 1.5;
+}
+
 #p-main a {
   color: #AD0000;
   font-weight: 700;
@@ -52,6 +57,7 @@
 }
 
 #p-main li {
+  line-height: 1.5;
   padding-left: 0;
   margin-bottom: 0.25em;
 }
@@ -101,6 +107,33 @@
   border-bottom: 1px solid #ECECEC;
 }
 
+#p-main .p-navtabs {
+  list-style: none;
+  padding: 0;
+  margin-left: 0;
+  border-bottom: 2.5px solid #AD0000
+}
+
+#p-main .p-tab {
+  color: #252525;
+  font-weight: 700;
+  font-size: 18px;
+  background-color: #ECECEC;
+  text-align: center;
+  padding: 0.4em 0;
+  margin: 0 2.5px;
+  cursor: pointer;
+}
+
+#p-main .p-tab.p-focus {
+  background-color: #939393;
+}
+
+#p-main .p-tab.p-active {
+  color: #FFF;
+  background-color: #AD0000;
+}
+
 #p-main .p-expandable {
   margin: 2.5px 0;
 }
@@ -110,11 +143,11 @@
   padding: 1em;
 }
 
-#p-main .p-xcontrol.p-xc-focus {
+#p-main .p-xcontrol.p-focus {
   background-color: #939393;
 }
 
-#p-main .p-xcontrol.p-xc-active {
+#p-main .p-xcontrol.p-active {
   background-color: #004E7440;
 }
 
@@ -142,7 +175,7 @@
   display: block;
   width: 250px;
   height: 250px;
-  margin: 0 auto 1em;
+  margin:  auto 1em;
   border-radius: 100%;
 }
 
@@ -159,6 +192,7 @@
 #p-main .link-list {
   list-style: none;
   margin-left: 0;
+  margin-bottom: 2em;
 }
 
 #p-main .link-list .icon-item {

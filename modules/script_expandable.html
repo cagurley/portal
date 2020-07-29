@@ -4,9 +4,8 @@
   $('.p-xcontrol').next().hide();
   $('.p-xcontrol').on('click keypress', function () {
     var icon = $(this).find('.p-xicon > polygon');
-    console.log(icon);
     $(this).next().toggle();
-    $(this).toggleClass('p-xc-active');
+    $(this).toggleClass('p-active');
 
     if (icon.attr('transform')) {
       icon.removeAttr('transform');
@@ -15,9 +14,9 @@
     }
   });
   $('.p-xcontrol').on('mouseover focusin', function () {
-    $(this).addClass('p-xc-focus');
+    $(this).addClass('p-focus');
   });
   $('.p-xcontrol').on('mouseout focusout', function () {
-    $(this).removeClass('p-xc-focus');
+    $(this).removeClass('p-focus');
   });
 </script>
