@@ -110,6 +110,14 @@
   padding: 1em;
 }
 
+#p-main .p-xcontrol.p-xc-focus {
+  background-color: #939393;
+}
+
+#p-main .p-xcontrol.p-xc-active {
+  background-color: #004E7440;
+}
+
 #p-main .p-xlabel {
   color: #004E74;
   margin: 0 auto 0 0;

@@ -1,0 +1,12 @@
+<script type="text/javascript">
+  'use strict';
+
+  $('.p-xcontrol').next().hide();
+
+  $('.p-xcontrol').on('click keypress', function () {
+    $(this).next().toggle();
+    $(this).toggleClass('p-xc-active');
+  });
+  $('.p-xcontrol').on('mouseover focusin', function () { $(this).addClass('p-xc-focus'); });
+  $('.p-xcontrol').on('mouseout focusout', function () { $(this).removeClass('p-xc-focus'); });
+</script>
