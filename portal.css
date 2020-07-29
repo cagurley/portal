@@ -18,12 +18,14 @@
   color: #AD0000;
   font-weight: 800;
   font-size: 32px;
+  margin-bottom: 20px;
 }
 
 #p-main h2 {
   color: #AD0000;
   font-weight: 700;
   font-size: 32px;
+  margin-bottom: 20px;
 }
 
 #p-main h3 {
@@ -57,11 +59,11 @@
 #p-main .p-row {
   display: flex;
   flex-flow: row wrap;
-  padding-bottom: 20px;
+  padding-bottom: 5px;
 }
 
 #p-main .p-col {
-  flex: 0 0 100%;
+  flex: 1 0 0;
   max-width: 100%;
   padding: 0 20px;
   z-index: 1;
@@ -69,6 +71,63 @@
 
 #p-main .p-section {
   margin: 1rem 0;
+}
+
+#p-main .p-button {
+  display: inline-block;
+  color: #FFF;
+  background-color: #004E74;
+  text-decoration: none;
+  padding: 1em;
+  margin: 10px;
+  border-radius: 5px;
+}
+
+#p-main .p-button:hover {
+  background-color: #003A57;
+}
+
+#p-main .p-button * {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+#p-main .p-table {
+  padding: 0 20px;
+}
+
+#p-main .p-tablerow {
+  padding: 20px 0;
+  border-bottom: 1px solid #ECECEC;
+}
+
+#p-main .p-expandable {
+  margin: 2.5px 0;
+}
+
+#p-main .p-xcontrol {
+  background-color: #ececec;
+  padding: 1em;
+}
+
+#p-main .p-xlabel {
+  color: #004E74;
+  margin: 0 auto 0 0;
+}
+
+#p-main .p-xicon {
+  display: inline-block;
+  fill: #004E74;
+  height: 1em;
+  margin: auto 0;
+}
+
+#p-main .p-mainrow {
+  padding-bottom: 20px;
+}
+
+#p-main .p-maincol {
+  flex: 0 0 100%;
 }
 
 #p-main .staff-portrait {
@@ -99,8 +158,8 @@
   margin-right: 15px;
 }
 
-#p-main .link-list a {
-  color: #004e74;
+#p-main .link-list * {
+  color: #004E74;
 }
 
 #p-main .link-list .icon {
@@ -132,7 +191,7 @@
 }
 
 @media (min-width: 992px) {
-  #p-main .p-col {
+  #p-main .p-maincol {
     flex: 1 0 0;
     padding: 0 45px;
   }
@@ -143,6 +202,12 @@
 }
 
 @media (min-width: 1200px) {
+  #p-main .p-mainrow {
+    width: 90vw;
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+
   #p-main .xl-3 {
     flex: 0 0 25%;
   }

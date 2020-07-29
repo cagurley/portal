@@ -6,13 +6,20 @@ import re
 try:
     with open('assembly.html') as file:
         contents = file.read()
-    tags = re.findall(r'(([ \t]*)\{\!([\w\d\.]+)\!\})', contents)
-    for tag in tags:
-        with open(os.path.join('components', tag[2])) as file:
-            component = ''
-            for line in file:
-                component += (tag[1] + line)
-            contents = contents.replace(tag[0], component)
+    mtags = re.findall(r'(([ \t]*)\{\!([\w\d\.]+)\!\})', contents)
+    for mtag in mtags:
+        with open(os.path.join('modules', mtag[2])) as mfile:
+            module = ''
+            for mline in mfile:
+                module += (mtag[1] + mline)
+            ctags = re.findall(r'(([ \t]*)\{\!([\w\d\.]+)\!\})', module)
+            for ctag in ctags:
+                with open(os.path.join('components', ctag[2])) as cfile:
+                    component = ''
+                    for cline in cfile:
+                        component += (ctag[1] + cline)
+                    module = module.replace(ctag[0], component)
+            contents = contents.replace(mtag[0], module)
     with open('assemblage_' + dt.datetime.strftime(dt.datetime.now(), '%Y%m%d%H%M%S') + '.html', 'w') as file:
         file.write(contents)
 except (OSError, UnicodeDecodeError) as e:
