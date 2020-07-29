@@ -1,3 +1,19 @@
 <div id="p-activities" class="p-section">
   <h2>Recent Activities</h2>
+  <div class="p-table">
+    {% for payment in pay %}
+    <div class="p-tablerow">
+      <div class="p-row">
+        <div class="p-col">{{payment.account}}</div>
+      </div>
+      <div class="p-row">
+        <div class="p-col">{{payment.amount}}</div>
+      </div>
+      <div class="p-row">
+        <div class="p-col"><strong>{{payment.status}}</strong></div>
+        <div class="p-col">{{payment.date}}</div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
 </div>
