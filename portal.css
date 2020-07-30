@@ -95,7 +95,7 @@
   border-radius: 5px;
 }
 
-#p-main .p-button:hover {
+#p-main .p-button.p-focus {
   background-color: #003A57;
 }
 
@@ -109,11 +109,58 @@
   border-bottom: 1px solid #ECECEC;
 }
 
+#p-main .p-navdrop {
+  padding: 0 1rem;
+}
+
+#p-main .p-ndcontrol {
+  display: flex;
+  padding: 0.5em;
+  cursor: pointer;
+}
+
+#p-main .p-ndcontrol.p-active {
+  background: #FFF;
+}
+
+#p-main .p-ndlabel {
+  color: #AD0000;
+  font-weight: 700;
+  margin: 0 0.5em 0 auto;
+}
+
+#p-main .p-ndlabel.p-focus {
+  text-decoration: underline;
+}
+
+#p-main .p-ndicon {
+  display: inline-block;
+  fill: #AD0000;
+  height: 0.5em;
+  margin: auto 0;
+}
+
+#p-main .p-ndoptions {
+  list-style: none;
+  text-align: right;
+  margin: 0;
+}
+
+#p-main .p-ndoption {
+  background-color: #FFF;
+  padding: 0.5em;
+  margin: 3px 0 0;
+}
+
+#p-main .p-ndoption * {
+  font-weight: 400;
+}
+
 #p-main .p-navtabs {
   list-style: none;
   padding: 0;
   margin-left: 0;
-  border-bottom: 2.5px solid #AD0000
+  border-bottom: 2.5px solid #AD0000;
 }
 
 #p-main .p-tab {
@@ -138,6 +185,7 @@
 
 #p-main .p-expandable {
   margin: 2.5px 0;
+  cursor: pointer;
 }
 
 #p-main .p-xcontrol {
@@ -209,8 +257,17 @@
 }
 
 #p-main .link-list .icon {
+  fill: #004E74;
   width: 32px;
   height: 32px;
+}
+
+#p-main .link-list .icon.p-focus {
+  fill: #003A57;
+}
+
+#p-main .p-focus:focus, #p-main .p-ndcontrol:focus {
+  outline: none;
 }
 
 #p-main .light {
@@ -234,6 +291,11 @@
   right: 0;
   bottom: 0;
   left: 0;
+}
+
+#p-main #p-tools {
+  position: relative;
+  margin: 0;
 }
 
 @media (min-width: 576px) {

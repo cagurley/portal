@@ -1,0 +1,16 @@
+<script type="text/javascript">
+  'use strict';
+
+  $('.p-ndcontrol, .icon-item a').on('mouseover focusin', function () {
+    $(this).children().first().addClass('p-focus');
+  });
+  $('.p-ndcontrol, .icon-item a').on('mouseout focusout', function () {
+    $(this).children().first().removeClass('p-focus');
+  });
+  $('.p-button a').on('mouseover focusin', function () {
+    $(this).parent().addClass('p-focus');
+  });
+  $('.p-button a').on('mouseout focusout', function () {
+    $(this).parent().removeClass('p-focus');
+  });
+</script>

@@ -1,0 +1,16 @@
+<script type="text/javascript">
+  'use strict';
+
+  $('.p-ndoptions').hide();
+  $('.p-ndcontrol').on('click keypress', function () {
+    var icon = $(this).find('.p-ndicon > polygon');
+    $(this).next().toggle();
+    $(this).toggleClass('p-active');
+
+    if (icon.attr('transform')) {
+      icon.removeAttr('transform');
+    } else {
+      icon.attr('transform', 'rotate(180)');
+    }
+  });
+</script>
