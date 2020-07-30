@@ -266,7 +266,7 @@
   fill: #003A57;
 }
 
-#p-main .p-focus:focus, #p-main .p-ndcontrol:focus {
+#p-main .p-active:focus, #p-main .p-focus:focus, #p-main .p-ndcontrol:focus {
   outline: none;
 }
 
