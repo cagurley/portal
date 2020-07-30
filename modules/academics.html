@@ -68,40 +68,6 @@
     </div>
   </div>
   {% endif %}
-  {% if sati.size > 0 %}
-  <div class="p-expandable">
-    <div class="p-row p-xcontrol" title="Display official Old SAT scores" tabindex="0">
-      <h3 class="p-xlabel">Old SAT (Official)</h3>
-      {!xicon.svg!}
-    </div>
-    <div class="p-table">
-      {% for score in sati %}
-      <div class="p-tablerow">
-        <div class="p-row">
-          <div class="p-col"><strong>Test Date</strong></div>
-          <div class="p-col"><strong>{{score.date}}</strong></div>
-        </div>
-        <div class="p-row">
-          <div class="p-col">Total</div>
-          <div class="p-col">{{score.total}}</div>
-        </div>
-        <div class="p-row">
-          <div class="p-col">Reading</div>
-          <div class="p-col">{{score.score1}}</div>
-        </div>
-        <div class="p-row">
-          <div class="p-col">Math</div>
-          <div class="p-col">{{score.score2}}</div>
-        </div>
-        <div class="p-row">
-          <div class="p-col">Writing</div>
-          <div class="p-col">{{score.score3}}</div>
-        </div>
-      </div>
-      {% endfor %}
-    </div>
-  </div>
-  {% endif %}
   {% if ap.size > 0 %}
   <div class="p-expandable">
     <div class="p-row p-xcontrol" title="Display official AP scores" tabindex="0">

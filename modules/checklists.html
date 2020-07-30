@@ -1,13 +1,46 @@
 <div id="p-checklists" class="p-section">
   <h2>Your Checklists</h2>
   <ul class="p-row p-navtabs">
+    {% if check_app.size > 0 %}
     <li id="p-appchecklist-tab" class="p-col p-tab" title="Display application checklists" tabindex="0"><span class="d-none-sm">App</span><span class="d-none d-initial-sm">Application</span></li>
+    {% endif %}
+    {% if check_comp[0].show == '1' %}
     <li id="p-compchecklist-tab" class="p-col p-tab" title="Display competitive program checklists" tabindex="0">Competitive</li>
+    {% endif %}
+    {% if check_gw.size > 0 %}
     <li id="p-gwchecklist-tab" class="p-col p-tab" title="Display Gateway checklists" tabindex="0">Gateway</li>
+    {% endif %}
   </ul>
+  {% if check_app.size > 0 %}
   <div id="p-appchecklist-tabbed" class="p-tabbed">
     <p>Please complete the following <strong>Application Checklist</strong> items. Those marked with a red X are required and not yet completed. Some items may take 30-60 minutes to update.</p>
+    <div class="p-table">
+      {% for checklist in check_app %}
+      <div class="p-tablerow">
+        <div class="p-row">
+          <img class="status-icon" src="/shared/{{checklist.image}}.png" alt="Status: {{checklist.status}}" title="Status: {{checklist.status}}">
+          <div class="p-col">
+            {% if checklist.href.size > 0 %}
+            <a href="{{checklist.href}}" target="_blank">{{checklist.subject}}</a>
+            {% else %}
+            <span>{{checklist.subject}}</span>
+            {% endif %}
+          </div>
+        </div>
+        <div class="p-row">
+          <div class="p-col">
+            <strong>{{checklist.status}}</strong>
+          </div>
+          <div class="p-col">
+            <strong>{{checklist.status_date}}</strong>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
   </div>
+  {% endif %}
+  {% if check_comp[0].show == '1' %}
   <div id="p-compchecklist-tabbed" class="p-tabbed">
     <p>Our records indicate you qualify to apply for at least one competitive scholarship program. Each program has its own list of requirements, which are listed as checklist items under each program's blue, expandable header. Some items require forms or uploads, which are accessible by clicking the links in the checklist. Please note:</p>
     <ul>
@@ -16,8 +49,67 @@
       <li>All competitive programs require the submission of a <strong>student involvement r&eacute;sum&eacute;</strong>. Once you upload a r&eacute;sum&eacute;, the r&eacute;sum&eacute; checklist item will be marked as "received" within each program checklist.</li>
       <li>Unless otherwise noted, the deadline to complete all items for any competitive scholarship program for the current application cycle is <strong>December 15</strong>.</li>
     </ul>
+    {% if check_mcc.size > 0 %}
+    <div id="p-x-mcconnell" class="p-expandable">
+      <div class="p-row p-xcontrol" title="Display McConnell Scholars Program checklists" tabindex="0">
+        <h3 class="p-xlabel">McConnell Scholars</h3>
+        {!xicon.svg!}
+      </div>
+      <div class="p-table">
+        {% for checklist in check_mcc %}
+        <div class="p-tablerow">
+          <div class="p-row">
+            <img class="status-icon" src="/shared/{{checklist.image}}.png" alt="Status: {{checklist.status}}" title="Status: {{checklist.status}}">
+            <div class="p-col">
+              {% if checklist.href.size > 0 %}
+              <a href="{{checklist.href}}" target="_blank">{{checklist.subject}}</a>
+              {% else %}
+              <span>{{checklist.subject}}</span>
+              {% endif %}
+            </div>
+          </div>
+          <div class="p-row">
+            <div class="p-col">
+              <strong>{{checklist.status}}</strong>
+            </div>
+            <div class="p-col">
+              <strong>{{checklist.status_date}}</strong>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    {% endif %}
   </div>
+  {% endif %}
+  {% if check_gw.size > 0 %}
   <div id="p-gwchecklist-tabbed" class="p-tabbed">
     <p>Please complete the following <strong>Gateway Checklist</strong> items. Some items require forms, which are linked with the checklist below. Those marked with a red X are required and not yet completed. Some items may take 30-60 minutes to update.</p>
+    <div class="p-table">
+      {% for checklist in check_gw %}
+      <div class="p-tablerow">
+        <div class="p-row">
+          <img class="status-icon" src="/shared/{{checklist.image}}.png" alt="Status: {{checklist.status}}" title="Status: {{checklist.status}}">
+          <div class="p-col">
+            {% if checklist.href.size > 0 %}
+            <a href="{{checklist.href}}" target="_blank">{{checklist.subject}}</a>
+            {% else %}
+            <span>{{checklist.subject}}</span>
+            {% endif %}
+          </div>
+        </div>
+        <div class="p-row">
+          <div class="p-col">
+            <strong>{{checklist.status}}</strong>
+          </div>
+          <div class="p-col">
+            <strong>{{checklist.status_date}}</strong>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
   </div>
+  {% endif %}
 </div>

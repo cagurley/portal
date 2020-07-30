@@ -221,6 +221,12 @@
   flex: 0 0 100%;
 }
 
+#p-main .status-icon {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+}
+
 #p-main .staff-portrait {
   display: block;
   width: 225px;
@@ -266,7 +272,7 @@
   fill: #003A57;
 }
 
-#p-main .p-active:focus, #p-main .p-focus:focus, #p-main .p-ndcontrol:focus {
+#p-main .p-active:focus, #p-main .p-focus:focus, #p-main .p-ndcontrol:focus, #p-main .p-xcontrol:focus {
   outline: none;
 }
 
@@ -291,6 +297,19 @@
   right: 0;
   bottom: 0;
   left: 0;
+}
+
+#p-main #p-checklists .p-table span {
+  font-weight: 500;
+}
+
+#p-main #p-checklists .p-table a {
+  font-weight: 500;
+  text-decoration: underline;
+}
+
+#p-main #p-checklists .p-table a:focus, #p-main #p-checklists .p-table a:hover {
+  color: #004E74;
 }
 
 #p-main #p-tools {
