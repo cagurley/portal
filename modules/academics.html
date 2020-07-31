@@ -1,6 +1,6 @@
 <div id="p-academics" class="p-section">
   <h2>Test Scores and GPA</h2>
-  {% if act.size > 0 %}
+  {% if base[0].round == 'FR' and act.size > 0 %}
   <div class="p-expandable">
     <div class="p-row p-xcontrol" title="Display official ACT scores" tabindex="0">
       <h3 class="p-xlabel">ACT (Official)</h3>
@@ -38,7 +38,7 @@
     </div>
   </div>
   {% endif %}
-  {% if satr.size > 0 %}
+  {% if base[0].round == 'FR' and satr.size > 0 %}
   <div class="p-expandable">
     <div class="p-row p-xcontrol" title="Display official SAT scores" tabindex="0">
       <h3 class="p-xlabel">SAT (Official)</h3>
@@ -120,6 +120,24 @@
         <div class="p-row">
           <div class="p-col">Score</div>
           <div class="p-col">{{score.total}}</div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  {% endif %}
+  {% if base[0].round == 'FR' and hs.size > 0 %}
+  <div class="p-expandable">
+    <div class="p-row p-xcontrol" title="Display official cumulative high school GPAs" tabindex="0">
+      <h3 class="p-xlabel">HS GPA (Official)</h3>
+      {!xicon.svg!}
+    </div>
+    <div class="p-table">
+      {% for school in hs %}
+      <div class="p-tablerow">
+        <div class="p-row">
+          <div class="p-col">{{school.name}}</div>
+          <div class="p-col">{{school.gpa}}</div>
         </div>
       </div>
       {% endfor %}
