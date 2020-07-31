@@ -213,6 +213,10 @@
   margin: auto 0;
 }
 
+#p-main .p-expandable .p-xdesc {
+  margin: 1.25em 0;
+}
+
 #p-main .p-mainrow {
   padding-bottom: 20px;
 }
@@ -340,6 +344,11 @@
   #p-main .lg-4 {
     flex: 0 0 calc(100% / 3);
   }
+
+  /* #p-main #p-mc-secondary {
+    position: relative;
+    top: -100px;
+  } */
 }
 
 @media (min-width: 1200px) {

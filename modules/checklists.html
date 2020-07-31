@@ -20,7 +20,9 @@
         <div class="p-row">
           <img class="status-icon" src="/shared/{{checklist.image}}.png" alt="Status: {{checklist.status}}" title="Status: {{checklist.status}}">
           <div class="p-col">
-            {% if checklist.href.size > 0 %}
+            {% if checklist.section == 'Form' %}
+            <a href="{{checklist.href}}">{{checklist.subject}}</a>
+            {% elsif checklist.href.size > 0 %}
             <a href="{{checklist.href}}" target="_blank">{{checklist.subject}}</a>
             {% else %}
             <span>{{checklist.subject}}</span>
@@ -49,35 +51,530 @@
       <li>All competitive programs require the submission of a <strong>student involvement r&eacute;sum&eacute;</strong>. Once you upload a r&eacute;sum&eacute;, the r&eacute;sum&eacute; checklist item will be marked as "received" within each program checklist.</li>
       <li>Unless otherwise noted, the deadline to complete all items for any competitive scholarship program for the current application cycle is <strong>December 15</strong>.</li>
     </ul>
+    {% if check_honors.size > 0 %}
+    <div id="p-x-honors" class="p-expandable">
+      <div class="p-row p-xcontrol" title="Display University Honors Program checklists" tabindex="0">
+        <h3 class="p-xlabel">Honors Program</h3>
+        {!xicon.svg!}
+      </div>
+      <div>
+        <div class="p-xdesc">
+          <p>Selection for the University Honors Program is competitive and based on the overall profile of the incoming class. Students selected for the Honors Program must maintain a 3.35 GPA and enroll in honors courses each academic year. Benefits of participating in the Honors Program include honors courses, honors advising, honors conferences, the University Honors Scholars Program, and priority course registration. In addition, honors students are eligible to live in Kurz Hall, a suite-style residence hall, where they can participate in a variety of honors living-learning communities (LLCs).</p>
+          <p><a href="https://louisville.edu/honors/prospective-students" target="_blank">Learn more about the University Honors Program</a></p>
+          <div style="margin-bottom: 0.4em;">
+            <strong>Honors Early Action Deadline:</strong>&nbsp;<span>October 15</span>
+          </div>
+          <div>
+            <strong>Application Deadline:</strong>&nbsp;<span>December 15</span>
+          </div>
+        </div>
+        <div class="p-table">
+          {% for checklist in check_honors %}
+          <div class="p-tablerow">
+            <div class="p-row">
+              <img class="status-icon" src="/shared/{{checklist.image}}.png" alt="Status: {{checklist.status}}" title="Status: {{checklist.status}}">
+              <div class="p-col">
+                {% if checklist.section == 'Form' %}
+                <a href="{{checklist.href}}">{{checklist.subject}}</a>
+                {% elsif checklist.href.size > 0 %}
+                <a href="{{checklist.href}}" target="_blank">{{checklist.subject}}</a>
+                {% else %}
+                <span>{{checklist.subject}}</span>
+                {% endif %}
+              </div>
+            </div>
+            <div class="p-row">
+              <div class="p-col">
+                <strong>{{checklist.status}}</strong>
+              </div>
+              <div class="p-col">
+                <strong>{{checklist.status_date}}</strong>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+    {% endif %}
+    {% if check_tc.size > 0 %}
+    <div id="p-x-tc" class="p-expandable">
+      <div class="p-row p-xcontrol" title="Display Trustees' competitive scholarship checklists" tabindex="0">
+        <h3 class="p-xlabel">Competitive Trustees'</h3>
+        {!xicon.svg!}
+      </div>
+      <div>
+        <div class="p-xdesc">
+          <p>Students with a 31 ACT/1390 SAT and a 3.5 GPA are eligible to compete for Trustees’ Competitive Scholarships. The consideration for these enhancement awards is primarily based on a student-involvement r&eacute;sum&eacute;.</p>
+          <p>The University of Louisville will award 150-200 Henry Vogt Scholarships (full tuition + $3,500 final award amount). Applicants not receiving the Vogt Scholarship will be eligible for $1,000-$7,000 awards, which will enhance their current admission-based scholarship.</p>
+          <p><a href="https://louisville.edu/admissions/cost-aid/scholarships/ky-so-in-scholarships" target="_blank">Learn more about the Trustees’ Competitive Scholarships</a></p>
+          <div>
+            <strong>Application Deadline:</strong>&nbsp;<span>December 15</span>
+          </div>
+        </div>
+        <div class="p-table">
+          {% for checklist in check_tc %}
+          <div class="p-tablerow">
+            <div class="p-row">
+              <img class="status-icon" src="/shared/{{checklist.image}}.png" alt="Status: {{checklist.status}}" title="Status: {{checklist.status}}">
+              <div class="p-col">
+                {% if checklist.section == 'Form' %}
+                <a href="{{checklist.href}}">{{checklist.subject}}</a>
+                {% elsif checklist.href.size > 0 %}
+                <a href="{{checklist.href}}" target="_blank">{{checklist.subject}}</a>
+                {% else %}
+                <span>{{checklist.subject}}</span>
+                {% endif %}
+              </div>
+            </div>
+            <div class="p-row">
+              <div class="p-col">
+                <strong>{{checklist.status}}</strong>
+              </div>
+              <div class="p-col">
+                <strong>{{checklist.status_date}}</strong>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+    {% endif %}
+    {% if check_porter.size > 0 %}
+    <div id="p-x-porter" class="p-expandable">
+      <div class="p-row p-xcontrol" title="Display Woodford R. Porter Scholarship checklists" tabindex="0">
+        <h3 class="p-xlabel">Porter Scholarship</h3>
+        {!xicon.svg!}
+      </div>
+      <div>
+        <div class="p-xdesc">
+          <p>The Woodford R. Porter Scholarship is awarded to African-American/Black students who are residents of Kentucky or our designated seven Southern Indiana counties. Scholarships will range in amount beginning at $2,000 renewable for eight semesters (nine semesters for students in the Speed School of Engineering). Students that will be considered for the scholarship must have a 3.0 or higher cumulative, weighted GPA and a 20 composite ACT or 1030 total SAT.</p>
+          <p><a href="http://louisville.edu/admissions/cost-aid/scholarships/woodford-r-porter-scholarship" target="_blank">Learn more about the Woodford R. Porter Scholarship Program</a></p>
+          <div>
+            <strong>Application Deadline:</strong>&nbsp;<span>December 15</span>
+          </div>
+        </div>
+        <div class="p-table">
+          {% for checklist in check_porter %}
+          <div class="p-tablerow">
+            <div class="p-row">
+              <img class="status-icon" src="/shared/{{checklist.image}}.png" alt="Status: {{checklist.status}}" title="Status: {{checklist.status}}">
+              <div class="p-col">
+                {% if checklist.section == 'Form' %}
+                <a href="{{checklist.href}}">{{checklist.subject}}</a>
+                {% elsif checklist.href.size > 0 %}
+                <a href="{{checklist.href}}" target="_blank">{{checklist.subject}}</a>
+                {% else %}
+                <span>{{checklist.subject}}</span>
+                {% endif %}
+              </div>
+            </div>
+            <div class="p-row">
+              <div class="p-col">
+                <strong>{{checklist.status}}</strong>
+              </div>
+              <div class="p-col">
+                <strong>{{checklist.status_date}}</strong>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+    {% endif %}
+    {% if check_ds.size > 0 %}
+    <div id="p-x-ds" class="p-expandable">
+      <div class="p-row p-xcontrol" title="Display Kentucky Dataseam Scholarship checklists" tabindex="0">
+        <h3 class="p-xlabel">Dataseam Scholarship</h3>
+        {!xicon.svg!}
+      </div>
+      <div>
+        <div class="p-xdesc">
+          <p>The Kentucky Dataseam Scholarship awards a renewable $2,000 to ten students from schools in coal severance counties participating in the Kentucky Dataseam Initiative. Students must meet the University of Louisville’s admission standards and pursue a degree in science, technology, engineering or math while attending the University of Louisville.</p>
+          <p><a href="https://louisville.edu/admissions/cost-aid/scholarships/ky-so-in-scholarships" target="_blank">Learn more about the Kentucky Dataseam Scholarship</a></p>
+          <div>
+            <strong>Application Deadline:</strong>&nbsp;<span>January 15</span>
+          </div>
+        </div>
+        <div class="p-table">
+          {% for checklist in check_ds %}
+          <div class="p-tablerow">
+            <div class="p-row">
+              <img class="status-icon" src="/shared/{{checklist.image}}.png" alt="Status: {{checklist.status}}" title="Status: {{checklist.status}}">
+              <div class="p-col">
+                {% if checklist.section == 'Form' %}
+                <a href="{{checklist.href}}">{{checklist.subject}}</a>
+                {% elsif checklist.href.size > 0 %}
+                <a href="{{checklist.href}}" target="_blank">{{checklist.subject}}</a>
+                {% else %}
+                <span>{{checklist.subject}}</span>
+                {% endif %}
+              </div>
+            </div>
+            <div class="p-row">
+              <div class="p-col">
+                <strong>{{checklist.status}}</strong>
+              </div>
+              <div class="p-col">
+                <strong>{{checklist.status_date}}</strong>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+    {% endif %}
+    {% if check_bf.size > 0 %}
+    <div id="p-x-bf" class="p-expandable">
+      <div class="p-row p-xcontrol" title="Display Brown Fellows Program checklists" tabindex="0">
+        <h3 class="p-xlabel">Brown Fellows</h3>
+        {!xicon.svg!}
+      </div>
+      <div>
+        <div class="p-xdesc">
+          <p>Brown Fellows is a prestigious scholarship program designed to support students’ unique personal, academic, and career goals while producing outstanding ambassadors for the state of Kentucky.</p>
+          <p>The program provides a diverse group of students the opportunity to build leadership skills through academic enrichment, expanded opportunity, and personal accountability. It is open to residents and non-residents of Kentucky with a 31 ACT or 1390 SAT and 3.5 GPA. Ten Fellows are selected each year. Recipients will have diverse academic interests; demonstrate that they are well-rounded; and show evidence of leadership potential. The scholarship award will include full tuition, room, board, and an allowance for books. In addition, each Fellow applies for funding from the Brown Foundation to support their individual enrichment plan, which can consist of specialized study, research, internships, service, or other opportunities that advance the student toward his or her goals. Individual enrichment funding can be up to $6,000 per project.</p>
+          <p><a href="http://louisville.edu/honors/scholarships/brownfellows" target="_blank">Learn more about the Brown Fellows Program</a></p>
+          <div>
+            <strong>Application Deadline:</strong>&nbsp;<span>December 15</span>
+          </div>
+        </div>
+        <div class="p-table">
+          {% for checklist in check_bf %}
+          <div class="p-tablerow">
+            <div class="p-row">
+              <img class="status-icon" src="/shared/{{checklist.image}}.png" alt="Status: {{checklist.status}}" title="Status: {{checklist.status}}">
+              <div class="p-col">
+                {% if checklist.section == 'Form' %}
+                <a href="{{checklist.href}}">{{checklist.subject}}</a>
+                {% elsif checklist.href.size > 0 %}
+                <a href="{{checklist.href}}" target="_blank">{{checklist.subject}}</a>
+                {% else %}
+                <span>{{checklist.subject}}</span>
+                {% endif %}
+              </div>
+            </div>
+            <div class="p-row">
+              <div class="p-col">
+                <strong>{{checklist.status}}</strong>
+              </div>
+              <div class="p-col">
+                <strong>{{checklist.status_date}}</strong>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+    {% endif %}
+    {% if check_grawe.size > 0 %}
+    <div id="p-x-grawe" class="p-expandable">
+      <div class="p-row p-xcontrol" title="Display Grawemeyer Scholars Program checklists" tabindex="0">
+        <h3 class="p-xlabel">Grawemeyer Scholars</h3>
+        {!xicon.svg!}
+      </div>
+      <div>
+        <div class="p-xdesc">
+          <p>The University of Louisville established the Grawemeyer Scholarship to honor UofL alumnus and benefactor H. Charles Grawemeyer, the namesake of the University of Louisville Grawemeyer Awards.</p>
+          <p>Each year, ten Grawemeyer Scholars receive a full, four-year-renewable scholarship, based on their promise for undergraduate research, leadership, and service to the University, as exemplified by their test scores, high school grades, letters of recommendation, and records of extracurricular achievement.</p>
+          <p>Grawemeyer Scholars receive full in-state tuition, plus a stipend for room, board, and books. Non-resident recipients will receive an enhancement to their National Scholars award. The Scholars Program provides a dedicated program of civic, cultural, and leadership education during their freshman year, during which Program administration and UofL faculty work to match Scholars with an undergraduate research experience in any field of study offered at the University.</p>
+          <p>The scholarship may also be used to fund a semester abroad, which the Program strongly encourages and works with the Study Abroad Office to facilitate.</p>
+          <p>Applicants should have a score of 31 on the ACT or 1360 on the SAT (CR + M) and a non-weighted GPA of at least 3.5. Applicants will submit a transcript, r&eacute;sum&eacute;, and two essays.</p>
+          <p><a href="http://grawemeyer.org/scholars-program/" target="_blank">Learn more about the Grawemeyer Scholars Program</a></p>
+          <div>
+            <strong>Application Deadline:</strong>&nbsp;<span>December 15</span>
+          </div>
+        </div>
+        <div class="p-table">
+          {% for checklist in check_grawe %}
+          <div class="p-tablerow">
+            <div class="p-row">
+              <img class="status-icon" src="/shared/{{checklist.image}}.png" alt="Status: {{checklist.status}}" title="Status: {{checklist.status}}">
+              <div class="p-col">
+                {% if checklist.section == 'Form' %}
+                <a href="{{checklist.href}}">{{checklist.subject}}</a>
+                {% elsif checklist.href.size > 0 %}
+                <a href="{{checklist.href}}" target="_blank">{{checklist.subject}}</a>
+                {% else %}
+                <span>{{checklist.subject}}</span>
+                {% endif %}
+              </div>
+            </div>
+            <div class="p-row">
+              <div class="p-col">
+                <strong>{{checklist.status}}</strong>
+              </div>
+              <div class="p-col">
+                <strong>{{checklist.status_date}}</strong>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+    {% endif %}
     {% if check_mcc.size > 0 %}
     <div id="p-x-mcconnell" class="p-expandable">
       <div class="p-row p-xcontrol" title="Display McConnell Scholars Program checklists" tabindex="0">
         <h3 class="p-xlabel">McConnell Scholars</h3>
         {!xicon.svg!}
       </div>
-      <div class="p-table">
-        {% for checklist in check_mcc %}
-        <div class="p-tablerow">
-          <div class="p-row">
-            <img class="status-icon" src="/shared/{{checklist.image}}.png" alt="Status: {{checklist.status}}" title="Status: {{checklist.status}}">
-            <div class="p-col">
-              {% if checklist.href.size > 0 %}
-              <a href="{{checklist.href}}" target="_blank">{{checklist.subject}}</a>
-              {% else %}
-              <span>{{checklist.subject}}</span>
-              {% endif %}
-            </div>
-          </div>
-          <div class="p-row">
-            <div class="p-col">
-              <strong>{{checklist.status}}</strong>
-            </div>
-            <div class="p-col">
-              <strong>{{checklist.status_date}}</strong>
-            </div>
+      <div>
+        <div class="p-xdesc">
+          <p>The McConnell Scholars Program is open to ten graduating Kentucky high school seniors with a strong record of commitment to leadership, scholarship and service. Students selected for the program receive four years of enhanced academic experience. Additional benefits include financial awards; mentored studies of leadership, citizenship and the liberal arts; international and domestic travel; opportunities to meet and engage with prominent national, state and local leaders; and access to the center’s alumni leadership network.</p>
+          <p><a href="https://louisville.edu/mcconnellcenter/scholars" target="_blank">Learn more about the McConnell Scholars Program</a></p>
+          <div>
+            <strong>Application Deadline:</strong>&nbsp;<span>December 15</span>
           </div>
         </div>
-        {% endfor %}
+        <div class="p-table">
+          {% for checklist in check_mcc %}
+          <div class="p-tablerow">
+            <div class="p-row">
+              <img class="status-icon" src="/shared/{{checklist.image}}.png" alt="Status: {{checklist.status}}" title="Status: {{checklist.status}}">
+              <div class="p-col">
+                {% if checklist.section == 'Form' %}
+                <a href="{{checklist.href}}">{{checklist.subject}}</a>
+                {% elsif checklist.href.size > 0 %}
+                <a href="{{checklist.href}}" target="_blank">{{checklist.subject}}</a>
+                {% else %}
+                <span>{{checklist.subject}}</span>
+                {% endif %}
+              </div>
+            </div>
+            <div class="p-row">
+              <div class="p-col">
+                <strong>{{checklist.status}}</strong>
+              </div>
+              <div class="p-col">
+                <strong>{{checklist.status_date}}</strong>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+    {% endif %}
+    {% if check_mlk.size > 0 %}
+    <div id="p-x-mlk" class="p-expandable">
+      <div class="p-row p-xcontrol" title="Display Martin Luther King Scholars Program checklists" tabindex="0">
+        <h3 class="p-xlabel">MLK Scholars</h3>
+        {!xicon.svg!}
+      </div>
+      <div>
+        <div class="p-xdesc">
+          <p>The Martin Luther King Scholars is a mentored scholar program designed to develop critical thinking skills, engage in self exploration, cultivate emerging leaders, and establish an appreciation for civic engagement. This scholarship is awarded annually to ten African American or Latino/Latinx high school graduates from Kentucky or Southern Indiana.</p>
+          <p><a href="https://louisville.edu/honors/scholarships/MLK" target="_blank">Learn more about the MLK Scholars Program</a></p>
+          <div>
+            <strong>Application Deadline:</strong>&nbsp;<span>December 15</span>
+          </div>
+        </div>
+        <div class="p-table">
+          {% for checklist in check_mlk %}
+          <div class="p-tablerow">
+            <div class="p-row">
+              <img class="status-icon" src="/shared/{{checklist.image}}.png" alt="Status: {{checklist.status}}" title="Status: {{checklist.status}}">
+              <div class="p-col">
+                {% if checklist.section == 'Form' %}
+                <a href="{{checklist.href}}">{{checklist.subject}}</a>
+                {% elsif checklist.href.size > 0 %}
+                <a href="{{checklist.href}}" target="_blank">{{checklist.subject}}</a>
+                {% else %}
+                <span>{{checklist.subject}}</span>
+                {% endif %}
+              </div>
+            </div>
+            <div class="p-row">
+              <div class="p-col">
+                <strong>{{checklist.status}}</strong>
+              </div>
+              <div class="p-col">
+                <strong>{{checklist.status_date}}</strong>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+    {% endif %}
+    {% if check_gems.size > 1 %}
+    <div id="p-x-gems" class="p-expandable">
+      <div class="p-row p-xcontrol" title="Display Guaranteed Entrance to Medical School program checklists" tabindex="0">
+        <h3 class="p-xlabel">GEMS Program</h3>
+        {!xicon.svg!}
+      </div>
+      <div>
+        <div class="p-xdesc">
+          <p>Students who complete the GEMS program are automatically admitted to UofL’s School of Medicine provided that they maintain a 3.4 cumulative and science GPA, score at or above the national mean on each section of the Medical College Admissions test (MCAT), and fully participate in program activities. As a GEMS participant, students have access to unparalleled experiences in the medical community including shadowing and hands- on opportunities to observe, while building relationships with medical faculty and fellow GEMS students.</p>
+          <p>In order to be considered for this program, incoming students must have a 31 ACT or 1390 SAT and a 3.75 high school GPA.</p>
+          <p><a href="https://louisville.edu/medicine/admissions/programs/gems" target="_blank">Learn more about the Guaranteed Entrance to Medical School program</a></p>
+          <div>
+            <strong>Application Deadline:</strong>&nbsp;<span>December 15</span>
+          </div>
+        </div>
+        <div class="p-table">
+          {% for checklist in check_gems %}
+          <div class="p-tablerow">
+            <div class="p-row">
+              <img class="status-icon" src="/shared/{{checklist.image}}.png" alt="Status: {{checklist.status}}" title="Status: {{checklist.status}}">
+              <div class="p-col">
+                {% if checklist.section == 'Form' %}
+                <a href="{{checklist.href}}">{{checklist.subject}}</a>
+                {% elsif checklist.href.size > 0 %}
+                <a href="{{checklist.href}}" target="_blank">{{checklist.subject}}</a>
+                {% else %}
+                <span>{{checklist.subject}}</span>
+                {% endif %}
+              </div>
+            </div>
+            <div class="p-row">
+              <div class="p-col">
+                <strong>{{checklist.status}}</strong>
+              </div>
+              <div class="p-col">
+                <strong>{{checklist.status_date}}</strong>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+    {% endif %}
+    {% if check_ulead.size > 1 %}
+    <div id="p-x-ulead" class="p-expandable">
+      <div class="p-row p-xcontrol" title="Display UofL Early Admission to Dentistry program checklists" tabindex="0">
+        <h3 class="p-xlabel">ULEAD Program</h3>
+        {!xicon.svg!}
+      </div>
+      <div>
+        <div class="p-xdesc">
+          <p>The University of Louisville School of Dentistry offers early admission opportunities to exceptional high school seniors who demonstrate a commitment to pursue a lifelong career in dentistry. Students who complete the ULEAD program are automatically admitted to UofL's School of Dentistry (ULSD) if they score above the national mean on each section of the Dental Admissions Test (DAT) and maintain a 3.5 cumulative and science GPA. ULEAD students belong to the UofL Pre-Dental Society, attend ULSD meetings and conferences, participate in community service activities, interact with mentors, attend summer pre-dental programs and more.</p>
+          <p>In order to be considered for this program, incoming students must have a 30 ACT or 1330 (CR + M) SAT and a 3.75 high school GPA.</p>
+          <p><a href="http://louisville.edu/admissions/aid/gep" target="_blank">Learn more about the University of Louisville Early Admission to Dentistry program</a></p>
+          <div>
+            <strong>Application Deadline:</strong>&nbsp;<span>December 15</span>
+          </div>
+        </div>
+        <div class="p-table">
+          {% for checklist in check_ulead %}
+          <div class="p-tablerow">
+            <div class="p-row">
+              <img class="status-icon" src="/shared/{{checklist.image}}.png" alt="Status: {{checklist.status}}" title="Status: {{checklist.status}}">
+              <div class="p-col">
+                {% if checklist.section == 'Form' %}
+                <a href="{{checklist.href}}">{{checklist.subject}}</a>
+                {% elsif checklist.href.size > 0 %}
+                <a href="{{checklist.href}}" target="_blank">{{checklist.subject}}</a>
+                {% else %}
+                <span>{{checklist.subject}}</span>
+                {% endif %}
+              </div>
+            </div>
+            <div class="p-row">
+              <div class="p-col">
+                <strong>{{checklist.status}}</strong>
+              </div>
+              <div class="p-col">
+                <strong>{{checklist.status_date}}</strong>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+    {% endif %}
+    {% if check_math.size > 0 %}
+    <div id="p-x-math" class="p-expandable">
+      <div class="p-row p-xcontrol" title="Display C. Coleman Petty Scholarship checklists" tabindex="0">
+        <h3 class="p-xlabel">Petty Scholarship</h3>
+        {!xicon.svg!}
+      </div>
+      <div>
+        <div class="p-xdesc">
+          <p>The C. Coleman Petty scholarship is offered by the Department of Mathematics to incoming students and rising sophomores who intend to major in mathematics and are enrolled in a mathematics course during the time the award is paid. The award is based upon GPA and other factors including service and extracurricular activities.</p>
+          <!-- <p><a href="" target="_blank">Learn more about the C. Coleman Petty Scholarship</a></p>
+          <div>
+            <strong>Application Deadline:</strong>&nbsp;<span></span>
+          </div> -->
+        </div>
+        <div class="p-table">
+          {% for checklist in check_math %}
+          <div class="p-tablerow">
+            <div class="p-row">
+              <img class="status-icon" src="/shared/{{checklist.image}}.png" alt="Status: {{checklist.status}}" title="Status: {{checklist.status}}">
+              <div class="p-col">
+                {% if checklist.section == 'Form' %}
+                <a href="{{checklist.href}}">{{checklist.subject}}</a>
+                {% elsif checklist.href.size > 0 %}
+                <a href="{{checklist.href}}" target="_blank">{{checklist.subject}}</a>
+                {% else %}
+                <span>{{checklist.subject}}</span>
+                {% endif %}
+              </div>
+            </div>
+            <div class="p-row">
+              <div class="p-col">
+                <strong>{{checklist.status}}</strong>
+              </div>
+              <div class="p-col">
+                <strong>{{checklist.status_date}}</strong>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+    {% endif %}
+    {% if check_speed.size > 0 %}
+    <div id="p-x-speed" class="p-expandable">
+      <div class="p-row p-xcontrol" title="Display Speed School scholarship checklists" tabindex="0">
+        <h3 class="p-xlabel">Speed Scholarship</h3>
+        {!xicon.svg!}
+      </div>
+      <div>
+        <div class="p-xdesc">
+          <p>A number of privately endowed scholarships allow Speed School students to acquire financial support for expenses ranging from textbook assistance to tuition. Requirements for <strong>admitted</strong> students include a minimum ACT composite of 28 and a high school GPA of at least 3.5.</p>
+          <p><a href="https://engineering.louisville.edu/admissions/undergraduateadmissions/financialaid/scholarshipsgrants/" target="_blank">Learn more about Speed School scholarships</a></p>
+          <div>
+            <strong>Application Deadline:</strong>&nbsp;<span>December 15</span>
+          </div>
+        </div>
+        <div class="p-table">
+          {% for checklist in check_speed %}
+          <div class="p-tablerow">
+            <div class="p-row">
+              <img class="status-icon" src="/shared/{{checklist.image}}.png" alt="Status: {{checklist.status}}" title="Status: {{checklist.status}}">
+              <div class="p-col">
+                {% if checklist.section == 'Form' %}
+                <a href="{{checklist.href}}">{{checklist.subject}}</a>
+                {% elsif checklist.href.size > 0 %}
+                <a href="{{checklist.href}}" target="_blank">{{checklist.subject}}</a>
+                {% else %}
+                <span>{{checklist.subject}}</span>
+                {% endif %}
+              </div>
+            </div>
+            <div class="p-row">
+              <div class="p-col">
+                <strong>{{checklist.status}}</strong>
+              </div>
+              <div class="p-col">
+                <strong>{{checklist.status_date}}</strong>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
       </div>
     </div>
     {% endif %}
@@ -92,7 +589,9 @@
         <div class="p-row">
           <img class="status-icon" src="/shared/{{checklist.image}}.png" alt="Status: {{checklist.status}}" title="Status: {{checklist.status}}">
           <div class="p-col">
-            {% if checklist.href.size > 0 %}
+            {% if checklist.section == 'Form' %}
+            <a href="{{checklist.href}}">{{checklist.subject}}</a>
+            {% elsif checklist.href.size > 0 %}
             <a href="{{checklist.href}}" target="_blank">{{checklist.subject}}</a>
             {% else %}
             <span>{{checklist.subject}}</span>

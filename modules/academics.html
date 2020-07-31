@@ -107,10 +107,12 @@
           <div class="p-col"><strong>Test</strong></div>
           <div class="p-col"><strong>{{score.type}}</strong></div>
         </div>
+        {% if score.subtype.size > 0 %}
         <div class="p-row">
           <div class="p-col"><strong>Type</strong></div>
           <div class="p-col"><strong>{{score.subtype}}</strong></div>
         </div>
+        {% endif %}
         <div class="p-row">
           <div class="p-col"><strong>Test Date</strong></div>
           <div class="p-col"><strong>{{score.date}}</strong></div>
