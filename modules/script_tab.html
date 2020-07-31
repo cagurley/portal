@@ -5,14 +5,14 @@
   var navParents = tabbed.parent().parent();
   tabbed.hide();
   navParents.each(function () {
-    if ($(this).find('#p-gwchecklist-tab')) {
+    if ($(this).find('#p-gwchecklist-tab').length > 0) {
       $(this).find('#p-gwchecklist-tab').addClass('p-active');
       $(this).find('#p-gwchecklist-tabbed').show();
     } else {
       $(this).find('.p-tab').first().addClass('p-active');
       $(this).find('.p-tabbed').first().show();
     }
-  })
+  });
   $('.p-tab').on('click keypress', function () {
     var navParent = $(this).parent().parent();
     var someTabbed = navParent.find('.p-tabbed');
