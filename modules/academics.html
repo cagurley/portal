@@ -1,6 +1,6 @@
 <div id="p-academics" class="p-section">
   <h2>Test Scores and GPA</h2>
-  {% if base[0].round == 'FR' and act.size > 0 %}
+  {% if base[0].type == 'FR' and act.size > 0 %}
   <div class="p-expandable">
     <div class="p-row p-xcontrol" title="Display official ACT scores" tabindex="0">
       <h3 class="p-xlabel">ACT (Official)</h3>
@@ -38,7 +38,7 @@
     </div>
   </div>
   {% endif %}
-  {% if base[0].round == 'FR' and satr.size > 0 %}
+  {% if base[0].type == 'FR' and satr.size > 0 %}
   <div class="p-expandable">
     <div class="p-row p-xcontrol" title="Display official SAT scores" tabindex="0">
       <h3 class="p-xlabel">SAT (Official)</h3>
@@ -126,7 +126,7 @@
     </div>
   </div>
   {% endif %}
-  {% if base[0].round == 'FR' and hs.size > 0 %}
+  {% if base[0].type == 'FR' and hs.size > 0 %}
   <div class="p-expandable">
     <div class="p-row p-xcontrol" title="Display official cumulative high school GPAs" tabindex="0">
       <h3 class="p-xlabel">HS GPA (Official)</h3>
@@ -144,7 +144,46 @@
     </div>
   </div>
   {% endif %}
+  {% if base[0].type == 'FR' or base[0].type == 'TR' %}
+  <div class="p-expandable">
+    <div class="p-row p-xcontrol" title="Display self-reported information" tabindex="0">
+      <h3 class="p-xlabel">Self-Reported</h3>
+      {!xicon.svg!}
+    </div>
+    <div class="p-table">
+      {% if base[0].type == 'FR' %}
+      <div class="p-tablerow">
+        <div class="p-row">
+          <div class="p-col">ACT</div>
+          <div class="p-col">{{sr[0].act}}</div>
+        </div>
+      </div>
+      <div class="p-tablerow">
+        <div class="p-row">
+          <div class="p-col">SAT</div>
+          <div class="p-col">{{sr[0].sat}}</div>
+        </div>
+      </div>
+      <div class="p-tablerow">
+        <div class="p-row">
+          <div class="p-col">GPA</div>
+          <div class="p-col">{{sr[0].hsgpa}}</div>
+        </div>
+      </div>
+      {% elsif base[0].type == 'TR' %}
+      <div class="p-tablerow">
+        <div class="p-row">
+          <div class="p-col">GPA</div>
+          <div class="p-col">{{sr[0].colgpa}}</div>
+        </div>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+  {% endif %}
+  {% if base[0].type == 'FR' %}
   <span class="p-button">
     <a href="/apply/form?id=982d3236-7505-610e-293e-9ac12624240d" target="_blank">Update Self-Reported Test Scores or GPA</a>
   </span>
+  {% endif %}
 </div>

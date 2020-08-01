@@ -225,6 +225,20 @@
   flex: 0 0 100%;
 }
 
+#p-main .callout {
+  margin: 30px 0;
+}
+
+#p-main .callout-stripe {
+  background-color: #FEBE10;
+  width: 20px;
+}
+
+#p-main .callout-main {
+  background-color: #FEBE1026;
+  padding: 20px;
+}
+
 #p-main .status-icon {
   position: absolute;
   width: 16px;

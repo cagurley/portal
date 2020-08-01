@@ -1,5 +1,6 @@
 <div id="p-contact" class="p-section">
   <h4>Contact Information</h4>
+  {% if base[0].type == 'FR' or base[0].type == 'DC' %}
   <div>
     <h5 class="d-none">Office of Admissions</h5>
     <ul class="link-list">
@@ -28,6 +29,46 @@
       </li>
     </ul>
   </div>
+  {% else %}
+  <div>
+    <h5 class="d-none">Office of Transfer &amp; Adult Services</h5>
+    <ul class="link-list">
+      <li><a href="http://louisville.edu/transfer" target="_blank">Office of Transfer &amp; Adult Services</a></li>
+      <li><a class="light" href="tel:+1 502-852-0166">502.852.0166</a></li>
+      <li><a href="mailto:transfer@louisville.edu">transfer@louisville.edu</a></li>
+      <li class="icon-item">
+        <a href="https://twitter.com/UofLadm" target="_blank">
+          {!twitter.svg!}
+        </a>
+      </li>
+      <li class="icon-item">
+        <a href="https://www.instagram.com/uofladmissions" target="_blank">
+          {!instagram.svg!}
+        </a>
+      </li>
+      <li class="icon-item">
+        <a href="https://www.facebook.com/UofLAdmissions" target="_blank">
+          {!facebook.svg!}
+        </a>
+      </li>
+      <li class="icon-item">
+        <a href="https://www.snapchat.com/add/uofladm" target="_blank">
+          {!snapchat.svg!}
+        </a>
+      </li>
+    </ul>
+  </div>
+  {% endif %}
+  {% if base[0].online == '1' %}
+  <div>
+    <h5 class="d-none">Online Learning</h5>
+    <ul class="link-list">
+      <li><a href="http://louisville.edu/online" target="_blank">Online Learning</a></li>
+      <li><a class="light" href="tel:+1 800-871-8635">800.871.8635</a></li>
+      <li><a href="mailto:online@louisville.edu">online@louisville.edu</a></li>
+    </ul>
+  </div>
+  {% endif %}
   <div>
     <h5 class="d-none">Financial Aid</h5>
     <ul class="link-list">
@@ -36,20 +77,35 @@
       <li><a href="mailto:finaid@louisville.edu">finaid@louisville.edu</a></li>
     </ul>
   </div>
-  <div>
-    <h5 class="d-none">Campus Housing</h5>
-    <ul class="link-list">
-      <li><a href="http://louisville.edu/housing" target="_blank">Campus Housing</a></li>
-      <li><a class="light" href="tel:+1 502-852-6636">502.852.6636</a></li>
-      <li><a href="mailto:housing@louisville.edu">housing@louisville.edu</a></li>
-    </ul>
-  </div>
-  <div>
-    <h5 class="d-none">Orientation Programs</h5>
-    <ul class="link-list">
-      <li><a href="http://louisville.edu/newcards" target="_blank">Orientation Programs</a></li>
-      <li><a class="light" href="tel:+1 502-852-7276">502.852.7276</a></li>
-      <li><a href="mailto:orient@louisville.edu">orient@louisville.edu</a></li>
-    </ul>
-  </div>
+  {% if base[0].admitted == '1' %}
+    {% if base[0].type == 'FR' or base[0].type == 'TR' or base[0].type == 'RE' %}
+    <div>
+      <h5 class="d-none">Campus Housing</h5>
+      <ul class="link-list">
+        <li><a href="http://louisville.edu/housing" target="_blank">Campus Housing</a></li>
+        <li><a class="light" href="tel:+1 502-852-6636">502.852.6636</a></li>
+        <li><a href="mailto:housing@louisville.edu">housing@louisville.edu</a></li>
+      </ul>
+    </div>
+    {% endif %}
+    {% if base[0].type == 'FR' %}
+    <div>
+      <h5 class="d-none">Orientation Programs</h5>
+      <ul class="link-list">
+        <li><a href="http://louisville.edu/newcards" target="_blank">Orientation Programs</a></li>
+        <li><a class="light" href="tel:+1 502-852-7276">502.852.7276</a></li>
+        <li><a href="mailto:orient@louisville.edu">orient@louisville.edu</a></li>
+      </ul>
+    </div>
+    {% elsif base[0].type == 'TR' %}
+    <div>
+      <h5 class="d-none">Orientation Programs</h5>
+      <ul class="link-list">
+        <li><a href="http://louisville.edu/newcards/transfer-students" target="_blank">Orientation Programs</a></li>
+        <li><a class="light" href="tel:+1 502-852-7276">502.852.7276</a></li>
+        <li><a href="mailto:orient@louisville.edu">orient@louisville.edu</a></li>
+      </ul>
+    </div>
+    {% endif %}
+  {% endif %}
 </div>

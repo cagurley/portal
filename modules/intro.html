@@ -1,9 +1,9 @@
 <div id="p-intro" class="p-section">
-  {% if base[0].action == 'APPL' %}
-  <h1>Hello, {{base[0].preferred}},</h1>
-  <p><strong>Thank you for your application to the University of Louisville! This application gateway is where you will monitor your admissions status and view any missing items we still may need from you. If you have any questions, please contact your admissions counselor.</strong></p>
-  {% elsif base[0].action == 'ADMT' or base[0].action == 'MATR' %}
+  {% if base[0].admitted == '1' %}
   <h1>Welcome to your New Cards Gateway, {{base[0].preferred}}!</h1>
   <p><strong>Congratulations on your acceptance to the University of Louisville! This New Cards Gateway is your destination to verify your admission status and contact information, view missing items we may need, and <em>take your next steps to join the Cardinal Family</em>.</strong></p>
+  {% else %}
+  <h1>Hello, {{base[0].preferred}}!</h1>
+  <p><strong>Thank you for your application to the University of Louisville! This application gateway is where you will monitor your admissions status and view any missing items we still may need from you. If you have any questions, please contact your admissions counselor.</strong></p>
   {% endif %}
 </div>
