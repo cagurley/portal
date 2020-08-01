@@ -1,7 +1,21 @@
 <div id="p-activities" class="p-section">
   <h2>Recent Activities</h2>
   <div class="p-table">
-    {% for payment in pay %}
+    {% for payment in pay_due %}
+    <div class="p-tablerow">
+      <div class="p-row">
+        <div class="p-col"><a href="/apply/payment?id={{payment.id}}" title="Make {{payment.account}} payment">{{payment.account}}</a></div>
+      </div>
+      <div class="p-row">
+        <div class="p-col">{{payment.amount}}</div>
+      </div>
+      <div class="p-row">
+        <div class="p-col"><strong>{{payment.status}}</strong></div>
+        <div class="p-col">{{payment.date}}</div>
+      </div>
+    </div>
+    {% endfor %}
+    {% for payment in pay_made %}
     <div class="p-tablerow">
       <div class="p-row">
         <div class="p-col">{{payment.account}}</div>
