@@ -8,8 +8,12 @@
   <p>Question about your next steps? I'm here to help.</p>
   <ul class="link-list">
     <li><a href="mailto:{{ staff[0].email | url_encode }}">{{staff[0].email}}</a></li>
-    <li><a href="tel:{{staff[0].phone}}">{{staff[0].phone}}</a></li>
-    <!--<li><a href="">Schedule a virtual appointment</a></li>-->
+    {% if staff[0].phone.size > 0 %}
+    <li><a href="tel:{{staff[0].phone}}">O: {{staff[0].phone}}</a></li>
+    {% endif %}
+    {% if staff[0].mobile.size > 0 %}
+    <li><a href="tel:{{staff[0].mobile}}">C: {{staff[0].mobile}}</a></li>
+    {% endif %}
   </ul>
 </div>
 {% endif %}
