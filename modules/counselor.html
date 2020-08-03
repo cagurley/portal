@@ -9,10 +9,10 @@
   <ul class="link-list">
     <li><a href="mailto:{{ staff[0].email | url_encode }}">{{staff[0].email}}</a></li>
     {% if staff[0].phone.size > 0 %}
-    <li><a href="tel:{{staff[0].phone}}">O: {{staff[0].phone}}</a></li>
+    <li><a href="tel:{{staff[0].phone}}">O: {{staff[0].fphone}}</a></li>
     {% endif %}
     {% if staff[0].mobile.size > 0 %}
-    <li><a href="tel:{{staff[0].mobile}}">C: {{staff[0].mobile}}</a></li>
+    <li><a href="tel:{{staff[0].mobile}}">C: {{staff[0].fmobile}}</a></li>
     {% endif %}
   </ul>
 </div>
