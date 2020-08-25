@@ -4,8 +4,10 @@
     {% if base[0].admitted == '1' %}
       {% if base[0].type == 'FR' %}
       <li><a href="https://louisville.edu/newcards/first-year/first-time-freshman-checklist/freshman-checklist" target="_blank">First-time Freshman Guide</a></li>
+      <li><a href="https://louisville.edu/admissions/office-of-admissions-faqs/#admitted-students" target="_blank">Admitted Student FAQs</a></li>
       {% elsif base[0].type == 'TR' %}
       <li><a href="http://louisville.edu/newcards/transfer-students/checklist" target="_blank">Transfer &amp; Adult Guide</a></li>
+      <li><a href="https://louisville.edu/admissions/apply/transfer/faqs" target="_blank">Transfer &amp; Adult FAQs</a></li>
       {% elsif base[0].type == 'RE' %}
       <li><a href="http://louisville.edu/newcards/returning/readmitted-student-to-do-list" target="_blank">Returning Student Guide</a></li>
       {% elsif base[0].type == 'SD' %}
@@ -20,7 +22,7 @@
       {% endif %}
     {% else %}
       {% if base[0].type == 'FR' %}
-      <li><a href="http://louisville.edu/admissions/apply/i-am-a-first-time-freshman/admissions-faqs" target="_blank">Admissions FAQs</a></li>
+      <li><a href="https://louisville.edu/admissions/office-of-admissions-faqs/#applying-to-uofl" target="_blank">Admissions FAQs</a></li>
       {% elsif base[0].type == 'TR' %}
       <li><a href="https://louisville.edu/admissions/apply/transfer/faqs" target="_blank">Transfer &amp; Adult FAQs</a></li>
       {% elsif base[0].type == 'RE' %}
