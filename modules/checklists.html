@@ -105,8 +105,20 @@
       </div>
       <div>
         <div class="p-xdesc">
-          <p>Students with a 31 ACT/1390 SAT and a 3.5 GPA are eligible to compete for Trustees' Competitive Scholarships. The consideration for these enhancement awards is primarily based on a student-involvement r&eacute;sum&eacute;.</p>
-          <p>The University of Louisville will award 150-200 Henry Vogt Scholarships (full tuition + $3,500 final award amount). Applicants not receiving the Vogt Scholarship will be eligible for $1,000-$7,000 awards, which will enhance their current admission-based scholarship.</p>
+          {% if unv_max[0].unv_act >= 31 or unv_max[0].unv_sat >= 1390 %}
+          <div>
+            <p>Students with a 31 ACT/1390 SAT and a 3.5 GPA are eligible to compete for Trustees' Competitive Scholarships. The consideration for these enhancement awards is primarily based on a student-involvement r&eacute;sum&eacute;.</p>
+            <p>The University of Louisville will award 150-200 Henry Vogt Scholarships (full tuition + $3,500 final award amount). Applicants not receiving the Vogt Scholarship will be eligible for $1,000-$7,000 awards, which will enhance their current admission-based scholarship.</p>
+          </div>
+          {% elsif unv_max[0].unv_act >= 26 or unv_max[0].unv_sat >= 1230 %}
+          <div>
+            <p>Students with a 26 ACT/1230 SAT and a 3.5 GPA are eligible to compete for Trustees' Competitive Scholarships. The consideration for these enhancements is in addition to your admission-based award and is based on a review of your high school grades, rigor of curriculum, and student–involvement r&eacute;sum&eacute;.</p>
+          </div>
+          {% else %}
+          <div>
+            <p>Applicants with a 3.5 GPA that are test optional or have a 23 ACT/1130 SAT or higher are eligible to compete for Trustees' Competitive Scholarships. The consideration for the Trustees' Scholarship is based on a review of your high school grades, rigor of curriculum, and student–involvement r&eacute;sum&eacute;.</p>
+          </div>
+          {% endif %}
           <p><a href="https://louisville.edu/admissions/cost-aid/scholarships/ky-so-in-scholarships" target="_blank">Learn more about the Trustees' Competitive Scholarships</a></p>
           <div>
             <strong>Application Deadline:</strong>&nbsp;<span>December 15</span>
