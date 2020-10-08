@@ -195,12 +195,12 @@
 
 #p-main .p-expandable {
   margin: 2.5px 0;
-  cursor: pointer;
 }
 
 #p-main .p-xcontrol {
   background-color: #ececec;
   padding: 1em;
+  cursor: pointer;
 }
 
 #p-main .p-xcontrol.p-focus {
