@@ -14,6 +14,9 @@
     {% if staff[0].mobile.size > 0 %}
     <li><a href="tel:{{staff[0].mobile}}">C: {{staff[0].fmobile}}</a></li>
     {% endif %}
+    {% if staff[0].book_link.size > 0 %}
+    <li><a href="{{staff[0].book_link}}" target="_blank">Schedule an appointment</a></li>
+    {% endif %}
   </ul>
 </div>
 {% endif %}
