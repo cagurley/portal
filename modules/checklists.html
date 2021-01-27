@@ -20,10 +20,13 @@
         <div class="p-row">
           <img class="status-icon" src="/shared/{{checklist.image}}.png" alt="Status: {{checklist.status}}" title="Status: {{checklist.status}}">
           <div class="p-col">
-            {% if checklist.section == 'Form' %}
-            <a href="{{checklist.href}}">{{checklist.subject}}</a>
-            {% elsif checklist.href.size > 0 %}
-            <a href="{{checklist.href}}" target="_blank">{{checklist.subject}}</a>
+            {% if checklist.href.size > 0 %}
+              {% assign fchar = checklist.href | slice: 0 %}
+              {% if fchar == '/' or fchar == '#' %}
+              <a href="{{checklist.href}}">{{checklist.subject}}</a>
+              {% else %}
+              <a href="{{checklist.href}}" target="_blank">{{checklist.subject}}</a>
+              {% endif %}
             {% else %}
             <span>{{checklist.subject}}</span>
             {% endif %}
@@ -74,10 +77,13 @@
             <div class="p-row">
               <img class="status-icon" src="/shared/{{checklist.image}}.png" alt="Status: {{checklist.status}}" title="Status: {{checklist.status}}">
               <div class="p-col">
-                {% if checklist.section == 'Form' %}
-                <a href="{{checklist.href}}">{{checklist.subject}}</a>
-                {% elsif checklist.href.size > 0 %}
-                <a href="{{checklist.href}}" target="_blank">{{checklist.subject}}</a>
+                {% if checklist.href.size > 0 %}
+                  {% assign fchar = checklist.href | slice: 0 %}
+                  {% if fchar == '/' or fchar == '#' %}
+                  <a href="{{checklist.href}}">{{checklist.subject}}</a>
+                  {% else %}
+                  <a href="{{checklist.href}}" target="_blank">{{checklist.subject}}</a>
+                  {% endif %}
                 {% else %}
                 <span>{{checklist.subject}}</span>
                 {% endif %}
@@ -130,10 +136,13 @@
             <div class="p-row">
               <img class="status-icon" src="/shared/{{checklist.image}}.png" alt="Status: {{checklist.status}}" title="Status: {{checklist.status}}">
               <div class="p-col">
-                {% if checklist.section == 'Form' %}
-                <a href="{{checklist.href}}">{{checklist.subject}}</a>
-                {% elsif checklist.href.size > 0 %}
-                <a href="{{checklist.href}}" target="_blank">{{checklist.subject}}</a>
+                {% if checklist.href.size > 0 %}
+                  {% assign fchar = checklist.href | slice: 0 %}
+                  {% if fchar == '/' or fchar == '#' %}
+                  <a href="{{checklist.href}}">{{checklist.subject}}</a>
+                  {% else %}
+                  <a href="{{checklist.href}}" target="_blank">{{checklist.subject}}</a>
+                  {% endif %}
                 {% else %}
                 <span>{{checklist.subject}}</span>
                 {% endif %}
@@ -176,10 +185,13 @@
             <div class="p-row">
               <img class="status-icon" src="/shared/{{checklist.image}}.png" alt="Status: {{checklist.status}}" title="Status: {{checklist.status}}">
               <div class="p-col">
-                {% if checklist.section == 'Form' %}
-                <a href="{{checklist.href}}">{{checklist.subject}}</a>
-                {% elsif checklist.href.size > 0 %}
-                <a href="{{checklist.href}}" target="_blank">{{checklist.subject}}</a>
+                {% if checklist.href.size > 0 %}
+                  {% assign fchar = checklist.href | slice: 0 %}
+                  {% if fchar == '/' or fchar == '#' %}
+                  <a href="{{checklist.href}}">{{checklist.subject}}</a>
+                  {% else %}
+                  <a href="{{checklist.href}}" target="_blank">{{checklist.subject}}</a>
+                  {% endif %}
                 {% else %}
                 <span>{{checklist.subject}}</span>
                 {% endif %}
@@ -221,10 +233,13 @@
             <div class="p-row">
               <img class="status-icon" src="/shared/{{checklist.image}}.png" alt="Status: {{checklist.status}}" title="Status: {{checklist.status}}">
               <div class="p-col">
-                {% if checklist.section == 'Form' %}
-                <a href="{{checklist.href}}">{{checklist.subject}}</a>
-                {% elsif checklist.href.size > 0 %}
-                <a href="{{checklist.href}}" target="_blank">{{checklist.subject}}</a>
+                {% if checklist.href.size > 0 %}
+                  {% assign fchar = checklist.href | slice: 0 %}
+                  {% if fchar == '/' or fchar == '#' %}
+                  <a href="{{checklist.href}}">{{checklist.subject}}</a>
+                  {% else %}
+                  <a href="{{checklist.href}}" target="_blank">{{checklist.subject}}</a>
+                  {% endif %}
                 {% else %}
                 <span>{{checklist.subject}}</span>
                 {% endif %}
@@ -264,10 +279,13 @@
             <div class="p-row">
               <img class="status-icon" src="/shared/{{checklist.image}}.png" alt="Status: {{checklist.status}}" title="Status: {{checklist.status}}">
               <div class="p-col">
-                {% if checklist.section == 'Form' %}
-                <a href="{{checklist.href}}">{{checklist.subject}}</a>
-                {% elsif checklist.href.size > 0 %}
-                <a href="{{checklist.href}}" target="_blank">{{checklist.subject}}</a>
+                {% if checklist.href.size > 0 %}
+                  {% assign fchar = checklist.href | slice: 0 %}
+                  {% if fchar == '/' or fchar == '#' %}
+                  <a href="{{checklist.href}}">{{checklist.subject}}</a>
+                  {% else %}
+                  <a href="{{checklist.href}}" target="_blank">{{checklist.subject}}</a>
+                  {% endif %}
                 {% else %}
                 <span>{{checklist.subject}}</span>
                 {% endif %}
@@ -307,10 +325,13 @@
             <div class="p-row">
               <img class="status-icon" src="/shared/{{checklist.image}}.png" alt="Status: {{checklist.status}}" title="Status: {{checklist.status}}">
               <div class="p-col">
-                {% if checklist.section == 'Form' %}
-                <a href="{{checklist.href}}">{{checklist.subject}}</a>
-                {% elsif checklist.href.size > 0 %}
-                <a href="{{checklist.href}}" target="_blank">{{checklist.subject}}</a>
+                {% if checklist.href.size > 0 %}
+                  {% assign fchar = checklist.href | slice: 0 %}
+                  {% if fchar == '/' or fchar == '#' %}
+                  <a href="{{checklist.href}}">{{checklist.subject}}</a>
+                  {% else %}
+                  <a href="{{checklist.href}}" target="_blank">{{checklist.subject}}</a>
+                  {% endif %}
                 {% else %}
                 <span>{{checklist.subject}}</span>
                 {% endif %}
@@ -351,10 +372,13 @@
             <div class="p-row">
               <img class="status-icon" src="/shared/{{checklist.image}}.png" alt="Status: {{checklist.status}}" title="Status: {{checklist.status}}">
               <div class="p-col">
-                {% if checklist.section == 'Form' %}
-                <a href="{{checklist.href}}">{{checklist.subject}}</a>
-                {% elsif checklist.href.size > 0 %}
-                <a href="{{checklist.href}}" target="_blank">{{checklist.subject}}</a>
+                {% if checklist.href.size > 0 %}
+                  {% assign fchar = checklist.href | slice: 0 %}
+                  {% if fchar == '/' or fchar == '#' %}
+                  <a href="{{checklist.href}}">{{checklist.subject}}</a>
+                  {% else %}
+                  <a href="{{checklist.href}}" target="_blank">{{checklist.subject}}</a>
+                  {% endif %}
                 {% else %}
                 <span>{{checklist.subject}}</span>
                 {% endif %}
@@ -398,10 +422,13 @@
             <div class="p-row">
               <img class="status-icon" src="/shared/{{checklist.image}}.png" alt="Status: {{checklist.status}}" title="Status: {{checklist.status}}">
               <div class="p-col">
-                {% if checklist.section == 'Form' %}
-                <a href="{{checklist.href}}">{{checklist.subject}}</a>
-                {% elsif checklist.href.size > 0 %}
-                <a href="{{checklist.href}}" target="_blank">{{checklist.subject}}</a>
+                {% if checklist.href.size > 0 %}
+                  {% assign fchar = checklist.href | slice: 0 %}
+                  {% if fchar == '/' or fchar == '#' %}
+                  <a href="{{checklist.href}}">{{checklist.subject}}</a>
+                  {% else %}
+                  <a href="{{checklist.href}}" target="_blank">{{checklist.subject}}</a>
+                  {% endif %}
                 {% else %}
                 <span>{{checklist.subject}}</span>
                 {% endif %}
@@ -441,10 +468,13 @@
             <div class="p-row">
               <img class="status-icon" src="/shared/{{checklist.image}}.png" alt="Status: {{checklist.status}}" title="Status: {{checklist.status}}">
               <div class="p-col">
-                {% if checklist.section == 'Form' %}
-                <a href="{{checklist.href}}">{{checklist.subject}}</a>
-                {% elsif checklist.href.size > 0 %}
-                <a href="{{checklist.href}}" target="_blank">{{checklist.subject}}</a>
+                {% if checklist.href.size > 0 %}
+                  {% assign fchar = checklist.href | slice: 0 %}
+                  {% if fchar == '/' or fchar == '#' %}
+                  <a href="{{checklist.href}}">{{checklist.subject}}</a>
+                  {% else %}
+                  <a href="{{checklist.href}}" target="_blank">{{checklist.subject}}</a>
+                  {% endif %}
                 {% else %}
                 <span>{{checklist.subject}}</span>
                 {% endif %}
@@ -484,10 +514,13 @@
             <div class="p-row">
               <img class="status-icon" src="/shared/{{checklist.image}}.png" alt="Status: {{checklist.status}}" title="Status: {{checklist.status}}">
               <div class="p-col">
-                {% if checklist.section == 'Form' %}
-                <a href="{{checklist.href}}">{{checklist.subject}}</a>
-                {% elsif checklist.href.size > 0 %}
-                <a href="{{checklist.href}}" target="_blank">{{checklist.subject}}</a>
+                {% if checklist.href.size > 0 %}
+                  {% assign fchar = checklist.href | slice: 0 %}
+                  {% if fchar == '/' or fchar == '#' %}
+                  <a href="{{checklist.href}}">{{checklist.subject}}</a>
+                  {% else %}
+                  <a href="{{checklist.href}}" target="_blank">{{checklist.subject}}</a>
+                  {% endif %}
                 {% else %}
                 <span>{{checklist.subject}}</span>
                 {% endif %}
@@ -528,10 +561,13 @@
             <div class="p-row">
               <img class="status-icon" src="/shared/{{checklist.image}}.png" alt="Status: {{checklist.status}}" title="Status: {{checklist.status}}">
               <div class="p-col">
-                {% if checklist.section == 'Form' %}
-                <a href="{{checklist.href}}">{{checklist.subject}}</a>
-                {% elsif checklist.href.size > 0 %}
-                <a href="{{checklist.href}}" target="_blank">{{checklist.subject}}</a>
+                {% if checklist.href.size > 0 %}
+                  {% assign fchar = checklist.href | slice: 0 %}
+                  {% if fchar == '/' or fchar == '#' %}
+                  <a href="{{checklist.href}}">{{checklist.subject}}</a>
+                  {% else %}
+                  <a href="{{checklist.href}}" target="_blank">{{checklist.subject}}</a>
+                  {% endif %}
                 {% else %}
                 <span>{{checklist.subject}}</span>
                 {% endif %}
@@ -572,10 +608,13 @@
             <div class="p-row">
               <img class="status-icon" src="/shared/{{checklist.image}}.png" alt="Status: {{checklist.status}}" title="Status: {{checklist.status}}">
               <div class="p-col">
-                {% if checklist.section == 'Form' %}
-                <a href="{{checklist.href}}">{{checklist.subject}}</a>
-                {% elsif checklist.href.size > 0 %}
-                <a href="{{checklist.href}}" target="_blank">{{checklist.subject}}</a>
+                {% if checklist.href.size > 0 %}
+                  {% assign fchar = checklist.href | slice: 0 %}
+                  {% if fchar == '/' or fchar == '#' %}
+                  <a href="{{checklist.href}}">{{checklist.subject}}</a>
+                  {% else %}
+                  <a href="{{checklist.href}}" target="_blank">{{checklist.subject}}</a>
+                  {% endif %}
                 {% else %}
                 <span>{{checklist.subject}}</span>
                 {% endif %}
@@ -615,10 +654,13 @@
             <div class="p-row">
               <img class="status-icon" src="/shared/{{checklist.image}}.png" alt="Status: {{checklist.status}}" title="Status: {{checklist.status}}">
               <div class="p-col">
-                {% if checklist.section == 'Form' %}
-                <a href="{{checklist.href}}">{{checklist.subject}}</a>
-                {% elsif checklist.href.size > 0 %}
-                <a href="{{checklist.href}}" target="_blank">{{checklist.subject}}</a>
+                {% if checklist.href.size > 0 %}
+                  {% assign fchar = checklist.href | slice: 0 %}
+                  {% if fchar == '/' or fchar == '#' %}
+                  <a href="{{checklist.href}}">{{checklist.subject}}</a>
+                  {% else %}
+                  <a href="{{checklist.href}}" target="_blank">{{checklist.subject}}</a>
+                  {% endif %}
                 {% else %}
                 <span>{{checklist.subject}}</span>
                 {% endif %}
@@ -658,10 +700,13 @@
             <div class="p-row">
               <img class="status-icon" src="/shared/{{checklist.image}}.png" alt="Status: {{checklist.status}}" title="Status: {{checklist.status}}">
               <div class="p-col">
-                {% if checklist.section == 'Form' %}
-                <a href="{{checklist.href}}">{{checklist.subject}}</a>
-                {% elsif checklist.href.size > 0 %}
-                <a href="{{checklist.href}}" target="_blank">{{checklist.subject}}</a>
+                {% if checklist.href.size > 0 %}
+                  {% assign fchar = checklist.href | slice: 0 %}
+                  {% if fchar == '/' or fchar == '#' %}
+                  <a href="{{checklist.href}}">{{checklist.subject}}</a>
+                  {% else %}
+                  <a href="{{checklist.href}}" target="_blank">{{checklist.subject}}</a>
+                  {% endif %}
                 {% else %}
                 <span>{{checklist.subject}}</span>
                 {% endif %}
@@ -692,10 +737,13 @@
         <div class="p-row">
           <img class="status-icon" src="/shared/{{checklist.image}}.png" alt="Status: {{checklist.status}}" title="Status: {{checklist.status}}">
           <div class="p-col">
-            {% if checklist.section == 'Form' %}
-            <a href="{{checklist.href}}">{{checklist.subject}}</a>
-            {% elsif checklist.href.size > 0 %}
-            <a href="{{checklist.href}}" target="_blank">{{checklist.subject}}</a>
+            {% if checklist.href.size > 0 %}
+              {% assign fchar = checklist.href | slice: 0 %}
+              {% if fchar == '/' or fchar == '#' %}
+              <a href="{{checklist.href}}">{{checklist.subject}}</a>
+              {% else %}
+              <a href="{{checklist.href}}" target="_blank">{{checklist.subject}}</a>
+              {% endif %}
             {% else %}
             <span>{{checklist.subject}}</span>
             {% endif %}
