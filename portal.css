@@ -256,11 +256,13 @@
 }
 
 #p-main .staff-portrait {
+  box-sizing: content-box;
   display: block;
   width: 225px;
   height: 225px;
-  margin:  40px auto 2em;
+  margin: 30px auto calc(2em - 10px);
   border-radius: 100%;
+  border: 10px solid #FFF;
 }
 
 #p-main .staff-name {
@@ -369,10 +371,10 @@
     flex: 0 0 calc(100% / 3);
   }
 
-  /* #p-main #p-mc-secondary {
+  #p-main #p-mc-secondary {
     position: relative;
     top: -100px;
-  } */
+  }
 }
 
 @media (min-width: 1200px) {
