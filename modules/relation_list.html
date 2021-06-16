@@ -1,0 +1,19 @@
+<div id="p-relations" class="p-section">
+  <h2>Relationships</h2>
+  <p>Below are all relations we have on file for you; these parties may receive certain communications from us regarding your application. Click someone from the list to edit or delete them or click the button below to add a new person.</p>
+  <div class="p-table">
+    {% for relation in relations %}
+    <div class="p-tablerow">
+      <div class="p-row">
+        <div class="p-col"><strong>{{relation.type}}</strong></div>
+      </div>
+      <div class="p-row">
+        <div class="p-col"><a href="?cmd=relDetail" title="Edit relation: {{relation.name}}">{{relation.name}}</a></div>
+      </div>
+      <div class="p-row">
+        <div class="p-col">{{relation.email}}</div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
