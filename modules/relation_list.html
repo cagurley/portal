@@ -5,10 +5,15 @@
     {% for relation in relations %}
     <div class="p-tablerow">
       <div class="p-row">
-        <div class="p-col"><strong>{{relation.type}}</strong></div>
+        <div class="p-col">
+          <strong>{{relation.type}}</strong>
+          {% if relation.resides != '' %}
+          <span>, {{relation.resides_formatted}} with you</span>
+          {% endif %}
+        </div>
       </div>
       <div class="p-row">
-        <div class="p-col"><a href="?cmd=relDetail" title="Edit relation: {{relation.name}}">{{relation.name}}</a></div>
+        <div class="p-col"><a href="?cmd=rel&relation={{relation.id}}" title="Edit relation: {{relation.name}}">{{relation.name}}</a></div>
       </div>
       <div class="p-row">
         <div class="p-col">{{relation.email}}</div>
