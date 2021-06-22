@@ -203,7 +203,7 @@
   cursor: pointer;
 }
 
-#p-main .p-xcontrol.p-focus {
+#p-main .p-xcontrol.p-focus, #p-main .p-clickable.p-focus {
   background-color: #939393;
 }
 
@@ -345,6 +345,10 @@
 #p-main #p-tools {
   position: relative;
   margin: 0;
+}
+
+#p-main .p-clickable {
+  cursor: pointer;
 }
 
 @media (min-width: 576px) {

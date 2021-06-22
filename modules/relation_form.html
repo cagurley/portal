@@ -1,5 +1,6 @@
-{% if rel.size > 0 %}
+<h1>{% if rel.size > 0 %}Edit{% else %}Add{% endif %} Relation</h1>
 <form id="form_page_newrel" action="/portal/ug_status?cmd=newRel" method="post">
+  {% if rel.size > 0 %}
   <div class="content">
     <input name="cmd" type="hidden" value="newRel">
     <input name="relation" type="hidden" value="{{rel[0].id}}">
@@ -17,9 +18,20 @@
       <label for="resides">Does this relation reside with you?</label>
       <div class="form_responses">
         <select name="resides" required>
+          {% case rel[0].resides %}
+          {% when 1 %}
           <option value=""></option>
           <option value="1" selected>Yes</option>
           <option value="0">No</option>
+          {% when 0 %}
+          <option value=""></option>
+          <option value="1">Yes</option>
+          <option value="0" selected>No</option>
+          {% else %}
+          <option value="" selected></option>
+          <option value="1">Yes</option>
+          <option value="0">No</option>
+          {% endcase %}
         </select>
       </div>
     </div>
@@ -70,12 +82,7 @@
       </div>
     </div>
   </div>
-  <div class="action">
-    <button class="default" onclick="var form = new FormFiller(document.getElementById('form_page_newrel')); if(form.Validate()) FW.Lazy.Commit(this);" type="button">Submit</button><a href="/apply/status">Cancel</a>
-  </div>
-</form>
-{% else %}
-<form id="form_page_newrel" action="/portal/ug_status?cmd=newRel" method="post">
+  {% else %}
   <div class="content">
     <input name="cmd" type="hidden" value="newRel">
     <input name="relation" type="hidden">
@@ -146,8 +153,9 @@
       </div>
     </div>
   </div>
+  {% endif %}
   <div class="action">
-    <button class="default" onclick="var form = new FormFiller(document.getElementById('form_page_newrel')); if(form.Validate()) FW.Lazy.Commit(this);" type="button">Submit</button><a href="/apply/status">Cancel</a>
+    <button class="default" onclick="var form = new FormFiller(document.getElementById('form_page_newrel')); if(form.Validate()) FW.Lazy.Commit(this);" type="button">Submit</button>
+    <a href="#" onclick="history.replaceState({}, 'Relations', '?cmd=relList'); window.location.reload();">Cancel</a>
   </div>
 </form>
-{% endif %}
