@@ -1,15 +1,19 @@
-<h1>{% if rel.size > 0 %}Edit{% else %}Add{% endif %} Relation</h1>
-<form id="form_page_newrel" action="/portal/ug_status?cmd=newRel" method="post">
-  {% if rel.size > 0 %}
+{% if rel.size > 0 %}
+<h1>Edit Relation</h1>
+<form id="form_page_newrel" action="/portal/ug_status?cmd=saveRel" method="post">
   <div class="content">
-    <input name="cmd" type="hidden" value="newRel">
+    <input name="cmd" type="hidden" value="saveRel">
     <input name="relation" type="hidden" value="{{rel[0].id}}">
     <div class="form_question" data-required="1">
       <label for="type">Type</label>
       <div class="form_responses">
         <select name="type" required>
           {% for item in rel_types %}
+          {% if item.id == rel[0].type %}
+          <option value="{{item.id}}" selected>{{item.value}}</option>
+          {% else %}
           <option value="{{item.id}}">{{item.value}}</option>
+          {% endif %}
           {% endfor %}
         </select>
       </div>
@@ -41,7 +45,11 @@
         <select name="prefix">
           <option value="" selected></option>
           {% for item in rel_prefixes %}
+          {% if item.value == rel[0].prefix %}
+          <option value="{{item.value}}" selected>{{item.value}}</option>
+          {% else %}
           <option value="{{item.value}}">{{item.value}}</option>
+          {% endif %}
           {% endfor %}
         </select>
       </div>
@@ -70,7 +78,11 @@
         <select name="suffix">
           <option value="" selected></option>
           {% for item in rel_suffixes %}
+          {% if item.value == rel[0].suffix %}
+          <option value="{{item.value}}" selected>{{item.value}}</option>
+          {% else %}
           <option value="{{item.value}}">{{item.value}}</option>
+          {% endif %}
           {% endfor %}
         </select>
       </div>
@@ -82,7 +94,18 @@
       </div>
     </div>
   </div>
-  {% else %}
+  <div class="action">
+    <span class="p-button">
+      <a href="#" onclick="var form = new FormFiller($('#form_page_newrel')); if(form.Validate()) FW.Lazy.Commit(this);">Save Changes</a>
+    </span>
+    <span class="p-button">
+      <a href="#" onclick="history.replaceState({}, 'Relations', '?cmd=relList'); window.location.reload();">Cancel</a>
+    </span>
+  </div>
+</form>
+{% else %}
+<h1>Add Relation</h1>
+<form id="form_page_newrel" action="/portal/ug_status?cmd=newRel" method="post">
   <div class="content">
     <input name="cmd" type="hidden" value="newRel">
     <input name="relation" type="hidden">
@@ -153,9 +176,13 @@
       </div>
     </div>
   </div>
-  {% endif %}
   <div class="action">
-    <button class="default" onclick="var form = new FormFiller(document.getElementById('form_page_newrel')); if(form.Validate()) FW.Lazy.Commit(this);" type="button">Submit</button>
-    <a href="#" onclick="history.replaceState({}, 'Relations', '?cmd=relList'); window.location.reload();">Cancel</a>
+    <span class="p-button">
+      <a href="#" onclick="var form = new FormFiller($('#form_page_newrel')); if(form.Validate()) FW.Lazy.Commit(this);">Submit</a>
+    </span>
+    <span class="p-button">
+      <a href="#" onclick="history.replaceState({}, 'Relations', '?cmd=relList'); window.location.reload();">Cancel</a>
+    </span>
   </div>
 </form>
+{% endif %}
