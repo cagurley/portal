@@ -18,27 +18,6 @@
         </select>
       </div>
     </div>
-    <div class="form_question" data-required="1">
-      <label for="resides">Does this relation reside with you?</label>
-      <div class="form_responses">
-        <select name="resides" required>
-          {% case rel[0].resides %}
-          {% when 1 %}
-          <option value=""></option>
-          <option value="1" selected>Yes</option>
-          <option value="0">No</option>
-          {% when 0 %}
-          <option value=""></option>
-          <option value="1">Yes</option>
-          <option value="0" selected>No</option>
-          {% else %}
-          <option value="" selected></option>
-          <option value="1">Yes</option>
-          <option value="0">No</option>
-          {% endcase %}
-        </select>
-      </div>
-    </div>
     <div class="form_question">
       <label for="prefix">Prefix</label>
       <div class="form_responses">
@@ -116,16 +95,6 @@
           {% for item in rel_types %}
           <option value="{{item.id}}">{{item.value}}</option>
           {% endfor %}
-        </select>
-      </div>
-    </div>
-    <div class="form_question" data-required="1">
-      <label for="resides">Does this relation reside with you?</label>
-      <div class="form_responses">
-        <select name="resides" required>
-          <option value=""></option>
-          <option value="1" selected>Yes</option>
-          <option value="0">No</option>
         </select>
       </div>
     </div>
