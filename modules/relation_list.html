@@ -6,11 +6,12 @@
     <div class="p-tablerow p-clickable" title="Edit relation: {{relation.name}}">
       <div class="p-row">
         <div class="p-col">
-          <strong>{{relation.type}}</strong>
+          <strong>{{relation.type_val}}</strong>
         </div>
       </div>
       <div class="p-row">
-        <div class="p-col"><a class="p-link" href="?cmd=rel&relation={{relation.id}}">{{relation.name}}</a></div>
+        {% capture rhref %}/register/rel?sys:relationship:id={{relation.id}}{% if relation.type.size > 0 %}&sys:relationship:type={{relation.type}}{% endif %}{% if relation.prefix.size > 0 %}&sys:relationship:prefix={{relation.prefix | url_encode}}{% endif %}{% if relation.first.size > 0 %}&sys:relationship:first={{relation.first | url_encode}}{% endif %}{% if relation.middle.size > 0 %}&sys:relationship:middle={{relation.middle | url_encode}}{% endif %}{% if relation.last.size > 0 %}&sys:relationship:last={{relation.last | url_encode}}{% endif %}{% if relation.suffix.size > 0 %}&sys:relationship:suffix={{relation.suffix | url_encode}}{% endif %}{% if relation.email.size > 0 %}&sys:relationship:email={{relation.email | url_encode}}{% endif %}{% endcapture %}
+        <div class="p-col"><a class="p-link" href="{{rhref}}">{{relation.name}}</a></div>
       </div>
       <div class="p-row">
         <div class="p-col">{{relation.email}}</div>
@@ -19,7 +20,7 @@
     {% endfor %}
   </div>
   <span class="p-button">
-    <a href="?cmd=rel">Add New Relation</a>
+    <a href="/register/rel">Add New Relation</a>
   </span>
   <span class="p-button">
     <a href="/apply/status">Return to Gateway</a>
