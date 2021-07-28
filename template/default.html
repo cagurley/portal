@@ -5,7 +5,7 @@
   </head>
   <body>
     {% if base.size == 0 %}
-    <div id="p-main">
+    <div id="p-main" class="p-page">
       <div id="p-banner">
         {!tools.html!}
         <div class="p-row p-mainrow">
@@ -20,7 +20,7 @@
     {!script_appselect.html!}
     {!script_navdrop.html!}
     {% elsif base[0].round == 'GR' %}
-    <div id="p-main">
+    <div id="p-main" class="p-page">
       <div id="p-banner">
         {!tools.html!}
         <div class="p-row p-mainrow">
@@ -32,7 +32,7 @@
       </div>
     </div>
     {% else %}
-    <div id="p-main">
+    <div id="p-main" class="p-page">
       <div id="p-banner">
         {!tools.html!}
         <div class="p-row p-mainrow">

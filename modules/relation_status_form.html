@@ -1,0 +1,32 @@
+<div id="p-relation-status-form" class="p-section">
+  {% if rel[0].active == '1' %}
+  <h3>You are inactivating the relation record for {{rel[0].name}}.</h3>
+  <p>
+    <strong>Submitting this form will set this record to inactive status, preventing them from receiving relevant communications. (They can later be reactivated from the "Update Relations" list view to reenable them to receive communications.)</strong>
+  </p>
+  {% else %}
+  <h3>You are reactivating the relation record for {{rel[0].name}}.</h3>
+  <p>
+    <strong>Submitting this form will set this record to active status, reenabling them to receive relevant communications. (They can later be inactivated from the "Update Relations" list view to prevent them from receiving communications. If you need to change other information for this record, you may do so from the "Update Relations" list view after reactivation.)</strong>
+  </p>
+  {% endif %}
+  <form id="form_page_changerelstatus" action="/portal/ug_status?cmd=changeRelStatus" method="post">
+    <div class="content">
+      <input name="cmd" type="hidden" value="changeRelStatus">
+      <input name="relation" type="hidden" value="{{rel[0].id}}">
+    </div>
+    <div class="action">
+      <span class="p-button">
+        {% if rel[0].active == '1' %}
+          {% assign faction = 'Inactivate' %}
+        {% else %}
+          {% assign faction = 'Reactivate' %}
+        {% endif %}
+        <a href="#" onclick="FW.Lazy.Commit(this);" title="{{faction}} relation: {{rel[0].name}}">{{faction}}</a>
+      </span>
+      <span class="p-button">
+        <a href="#" onclick="FW.Dialog.Unload();" title="Return to relationship list">Cancel</a>
+      </span>
+    </div>
+  </form>
+</div>

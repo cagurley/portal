@@ -26,7 +26,7 @@
             <a href="{{rhref}}" title="Edit relation: {{relation.name}}">Edit</a>
           </span>
           <span class="p-button">
-            <a href="#" title="Inactivate relation: {{relation.name}}">Inactivate</a>
+            <a data-href="/portal/ug_status?cmd=relStatus&relation={{relation.id}}" href="#" onclick="return (FW.Lazy.Popup(this));" title="Inactivate relation: {{relation.name}}">Inactivate</a>
           </span>
         </div>
       </div>
@@ -55,7 +55,7 @@
         </div>
         <div class="p-col bs-12 md-6 lg-4 t-center-md">
           <span class="p-button">
-            <a href="#" title="Activate relation: {{relation.name}}">Activate</a>
+            <a data-href="/portal/ug_status?cmd=relStatus&relation={{relation.id}}" href="#" onclick="return (FW.Lazy.Popup(this));" title="Activate relation: {{relation.name}}">Activate</a>
           </span>
         </div>
       </div>
@@ -64,9 +64,9 @@
   </div>
   {% endif %}
   <span class="p-button">
-    <a href="/register/rel">Add New Relation</a>
+    <a href="/register/rel" title="Add new relation">Add New Relation</a>
   </span>
   <span class="p-button">
-    <a href="/apply/status">Return to Gateway</a>
+    <a href="/apply/status" title="Return to Gateway">Return to Gateway</a>
   </span>
 </div>
