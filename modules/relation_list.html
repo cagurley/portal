@@ -1,24 +1,68 @@
 <div id="p-relations" class="p-section">
   <h1>Relationships</h1>
   <p>Below are all relations we have on file for you; these parties may receive certain communications from us regarding your application. Click someone from the list to edit or delete them or click the button below to add a new person.</p>
+  {% if active_relations.size > 0 %}
+  <h2>Active</h2>
   <div class="p-table">
-    {% for relation in relations %}
-    <div class="p-tablerow p-clickable" title="Edit relation: {{relation.name}}">
+    {% for relation in active_relations %}
+    <div class="p-tablerow">
       <div class="p-row">
         <div class="p-col">
-          <strong>{{relation.type_val}}</strong>
+          <div class="p-row">
+            <div class="p-col">
+              <strong>{{relation.type_val}}</strong>
+            </div>
+          </div>
+          <div class="p-row">
+            {% capture rhref %}/register/rel?sys:relationship:id={{relation.id}}{% if relation.type.size > 0 %}&sys:relationship:type={{relation.type}}{% endif %}{% if relation.prefix.size > 0 %}&sys:relationship:prefix={{relation.prefix | url_encode}}{% endif %}{% if relation.first.size > 0 %}&sys:relationship:first={{relation.first | url_encode}}{% endif %}{% if relation.middle.size > 0 %}&sys:relationship:middle={{relation.middle | url_encode}}{% endif %}{% if relation.last.size > 0 %}&sys:relationship:last={{relation.last | url_encode}}{% endif %}{% if relation.suffix.size > 0 %}&sys:relationship:suffix={{relation.suffix | url_encode}}{% endif %}{% if relation.email.size > 0 %}&sys:relationship:email={{relation.email | url_encode}}{% endif %}{% endcapture %}
+            <div class="p-col"><a href="{{rhref}}" title="Edit relation: {{relation.name}}">{{relation.name}}</a></div>
+          </div>
+          <div class="p-row">
+            <div class="p-col">{{relation.email}}</div>
+          </div>
         </div>
-      </div>
-      <div class="p-row">
-        {% capture rhref %}/register/rel?sys:relationship:id={{relation.id}}{% if relation.type.size > 0 %}&sys:relationship:type={{relation.type}}{% endif %}{% if relation.prefix.size > 0 %}&sys:relationship:prefix={{relation.prefix | url_encode}}{% endif %}{% if relation.first.size > 0 %}&sys:relationship:first={{relation.first | url_encode}}{% endif %}{% if relation.middle.size > 0 %}&sys:relationship:middle={{relation.middle | url_encode}}{% endif %}{% if relation.last.size > 0 %}&sys:relationship:last={{relation.last | url_encode}}{% endif %}{% if relation.suffix.size > 0 %}&sys:relationship:suffix={{relation.suffix | url_encode}}{% endif %}{% if relation.email.size > 0 %}&sys:relationship:email={{relation.email | url_encode}}{% endif %}{% endcapture %}
-        <div class="p-col"><a class="p-link" href="{{rhref}}">{{relation.name}}</a></div>
-      </div>
-      <div class="p-row">
-        <div class="p-col">{{relation.email}}</div>
+        <div class="p-col bs-12 md-6 lg-4 t-center-md">
+          <span class="p-button">
+            <a href="{{rhref}}" title="Edit relation: {{relation.name}}">Edit</a>
+          </span>
+          <span class="p-button">
+            <a href="#" title="Inactivate relation: {{relation.name}}">Inactivate</a>
+          </span>
+        </div>
       </div>
     </div>
     {% endfor %}
   </div>
+  {% endif %}
+  {% if nonactive_relations.size > 0 %}
+  <h2>Inactive</h2>
+  <div class="p-table">
+    {% for relation in nonactive_relations %}
+    <div class="p-tablerow">
+      <div class="p-row">
+        <div class="p-col">
+          <div class="p-row">
+            <div class="p-col">
+              <strong>{{relation.type_val}}</strong>
+            </div>
+          </div>
+          <div class="p-row">
+            <div class="p-col"><a class="p-inactive" href="{{rhref}}" title="Activate relation: {{relation.name}}">{{relation.name}}</a></div>
+          </div>
+          <div class="p-row">
+            <div class="p-col">{{relation.email}}</div>
+          </div>
+        </div>
+        <div class="p-col bs-12 md-6 lg-4 t-center-md">
+          <span class="p-button">
+            <a href="#" title="Activate relation: {{relation.name}}">Activate</a>
+          </span>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  {% endif %}
   <span class="p-button">
     <a href="/register/rel">Add New Relation</a>
   </span>

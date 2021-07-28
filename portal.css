@@ -231,7 +231,7 @@
   padding-bottom: 20px;
 }
 
-#p-main .p-maincol {
+#p-main .p-maincol, #p-main .bs-12 {
   flex: 0 0 100%;
 }
 
@@ -362,6 +362,16 @@
 
   #p-main .d-initial-sm {
     display: initial;
+  }
+}
+
+@media (min-width: 768px) {
+  #p-main .md-6 {
+    flex: 0 0 50%;
+  }
+
+  #p-main .t-center-md {
+    text-align: center;
   }
 }
 
