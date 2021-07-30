@@ -303,11 +303,19 @@
 }
 
 .p-page .p-inactive {
-  color: #808080 !important;
+  color: #939393 !important;
 }
 
 .p-page .p-active:focus, .p-page .p-focus:focus, .p-page .p-ndcontrol:focus, .p-page .p-xcontrol:focus {
   outline: none;
+}
+
+.p-page .p-popup-close {
+  color: #939393 !important;
+  font-weight: 700;
+  font-size: 1.25em;
+  text-align: right;
+  cursor: pointer;
 }
 
 .p-page .light {
