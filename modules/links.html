@@ -11,12 +11,13 @@
       <li><a href="https://louisville.edu/admissions/apply/transfer/faqs" target="_blank">Transfer &amp; Adult FAQs</a></li>
       {% elsif base[0].type == 'RE' %}
       <li><a href="http://louisville.edu/newcards/returning/readmitted-student-to-do-list" target="_blank">Returning Student Guide</a></li>
-      {% elsif base[0].type == 'SD' %}
-      <li><a href="https://louisville.edu/advising/centers" target="_blank">Contact Your Advisor</a></li>
       {% elsif base[0].type == 'DC' %}
       <li><a href="http://louisville.edu/admissions/apply/requirements/dual-credit-program" target="_blank">Dual Credit</a></li>
       {% else %}
       <li><a href="https://louisville.edu/newcards/nondegree/nondegree-student-to-do-list" target="_blank">Non-degree Guide</a></li>
+      {% endif %}
+      {% if base[0].type == 'TR' or base[0].type == 'RE' or base[0].type == 'SD' %}
+      <li><a href="https://louisville.edu/advising/centers" target="_blank">Contact Your Advisor</a></li>
       {% endif %}
       {% if base[0].type == 'FR' or base[0].type == 'TR' %}
       <li><a href="http://louisville.edu/newcards/student-technology-requirements" target="_blank">Technology Requirements</a></li>
