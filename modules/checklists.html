@@ -1,7 +1,7 @@
 <div id="p-checklists" class="p-section">
   <h2>Your Checklists</h2>
   <ul class="p-row p-navtabs">
-    {% if check_app.size > 0 %}
+    {% if base[0].admitted == '0' and check_app.size > 0 %}
     <li id="p-appchecklist-tab" class="p-col p-tab" title="Display application checklists" tabindex="0"><span class="d-none-sm">App</span><span class="d-none d-initial-sm">Application</span></li>
     {% endif %}
     {% if check_comp[0].show == '1' %}
@@ -10,8 +10,11 @@
     {% if check_gw.size > 0 %}
     <li id="p-gwchecklist-tab" class="p-col p-tab" title="Display Gateway checklists" tabindex="0">Gateway</li>
     {% endif %}
+    {% if base[0].admitted == '1' and check_orn.size > 0 %}
+    <li id="p-ornchecklist-tab" class="p-col p-tab" title="Display orientation checklists" tabindex="0">Orientation</li>
+    {% endif %}
   </ul>
-  {% if check_app.size > 0 %}
+  {% if base[0].admitted == '0' and check_app.size > 0 %}
   <div id="p-appchecklist-tabbed" class="p-tabbed">
     <p>Please complete the following <strong>Application Checklist</strong> items. Those marked with a red X are required and not yet completed. Some items may take 30-60 minutes to update.</p>
     <div class="p-table">
@@ -813,6 +816,40 @@
     <p>Please complete the following <strong>Gateway Checklist</strong> items. Some items require forms, which are linked with the checklist below. Those marked with a red X are not yet completed. Some items may take 30-60 minutes to update.</p>
     <div class="p-table">
       {% for checklist in check_gw %}
+      <div class="p-tablerow">
+        <div class="p-row">
+          <img class="status-icon" src="/shared/{{checklist.image}}.png" alt="Status: {{checklist.status}}" title="Status: {{checklist.status}}">
+          <div class="p-col">
+            {% if checklist.href.size > 0 %}
+              {% assign fchar = checklist.href | slice: 0 %}
+              {% if fchar == '/' or fchar == '#' %}
+              <a href="{{checklist.href}}">{{checklist.subject}}</a>
+              {% else %}
+              <a href="{{checklist.href}}" target="_blank">{{checklist.subject}}</a>
+              {% endif %}
+            {% else %}
+            <span>{{checklist.subject}}</span>
+            {% endif %}
+          </div>
+        </div>
+        <div class="p-row">
+          <div class="p-col">
+            <strong>{{checklist.status}}</strong>
+          </div>
+          <div class="p-col">
+            <strong>{{checklist.status_date}}</strong>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  {% endif %}
+  {% if base[0].admitted == '1' and check_orn.size > 0 %}
+  <div id="p-ornchecklist-tabbed" class="p-tabbed">
+    <p>Please complete the following <strong>Orientation Checklist</strong> items. Some items require forms, which are linked with the checklist below. Those marked with a red X are not yet completed. Some items may take 30-60 minutes to update.</p>
+    <div class="p-table">
+      {% for checklist in check_orn %}
       <div class="p-tablerow">
         <div class="p-row">
           <img class="status-icon" src="/shared/{{checklist.image}}.png" alt="Status: {{checklist.status}}" title="Status: {{checklist.status}}">
