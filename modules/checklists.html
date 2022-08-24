@@ -55,7 +55,7 @@
       <li>The list of competitive programs for which you qualify to apply will appear based on your self-reported or verified test score(s) and GPA. Superscores are not accepted at this time; December ACT/SAT test scores <em>will be</em> accepted. <a href="#p-academics"><strong>View your test score(s) and GPA.</strong></a></li>
       <li>Completion of all checklist items under a program-specific header is required to be considered for that particular program.</li>
       <li>All competitive programs require the submission of a <a href="https://louisville.edu/admissions/cost-aid/scholarships/docs/scholarship-rubric" target="_blank"><strong>student involvement r&eacute;sum&eacute;</strong></a>. Once you upload a r&eacute;sum&eacute;, the r&eacute;sum&eacute; checklist item will be marked as "received" within each program checklist.</li>
-      <li>Unless otherwise noted, the deadline to complete all items for any competitive scholarship program for the current application cycle is <strong>December 15</strong>. UofL's deadline to apply for competitive programs and scholarships has been extended to <strong>January 1</strong> for students and families affected by the tornadoes.</li>
+      <li>Unless otherwise noted, the deadline to complete all items for any competitive scholarship program for the current application cycle is <strong>December 15</strong>.
     </ul>
     {% if check_honors.size > 0 %}
     <div id="p-x-honors" class="p-expandable">
@@ -125,103 +125,6 @@
         </div>
         <div class="p-table">
           {% for checklist in check_tc %}
-          <div class="p-tablerow">
-            <div class="p-row">
-              <img class="status-icon" src="/shared/{{checklist.image}}.png" alt="Status: {{checklist.status}}" title="Status: {{checklist.status}}">
-              <div class="p-col">
-                {% if checklist.href.size > 0 %}
-                  {% assign fchar = checklist.href | slice: 0 %}
-                  {% if fchar == '/' or fchar == '#' %}
-                  <a href="{{checklist.href}}">{{checklist.subject}}</a>
-                  {% else %}
-                  <a href="{{checklist.href}}" target="_blank">{{checklist.subject}}</a>
-                  {% endif %}
-                {% else %}
-                <span>{{checklist.subject}}</span>
-                {% endif %}
-              </div>
-            </div>
-            <div class="p-row">
-              <div class="p-col">
-                <strong>{{checklist.status}}</strong>
-              </div>
-              <div class="p-col">
-                <strong>{{checklist.status_date}}</strong>
-              </div>
-            </div>
-          </div>
-          {% endfor %}
-        </div>
-      </div>
-    </div>
-    {% endif %}
-    {% if check_rc.size > 0 %}
-    <div id="p-x-rc" class="p-expandable">
-      <div class="p-row p-xcontrol" title="Display regional competitive scholarship checklists" tabindex="0">
-        <h3 class="p-xlabel">Competitive Regional</h3>
-        {!xicon.svg!}
-      </div>
-      <div>
-        <div class="p-xdesc">
-          <div>
-            <!-- <p>Students with a 21 ACT/1060 SAT and a 3.0 GPA or those admitted test-optional with a 3.0 GPA are eligible to compete for an enhancement to their Regional Scholarship. The consideration for an enhancement award is based on a student-involvement r&eacute;sum&eacute;, high school grades, and rigor of high school curriculum.</p>
-            <p>The University of Louisville will award enhancements of $1,000-$6,000 to Regional Awards.</p> -->
-          </div>
-          <p><a href="https://louisville.edu/admissions/cost-aid/scholarships/uofl-regional-awards" target="_blank">Learn more about the Regional Scholarships</a></p>
-          <div>
-            <strong>Application Deadline:</strong>&nbsp;<span>December 15</span>
-          </div>
-        </div>
-        <div class="p-table">
-          {% for checklist in check_rc %}
-          <div class="p-tablerow">
-            <div class="p-row">
-              <img class="status-icon" src="/shared/{{checklist.image}}.png" alt="Status: {{checklist.status}}" title="Status: {{checklist.status}}">
-              <div class="p-col">
-                {% if checklist.href.size > 0 %}
-                  {% assign fchar = checklist.href | slice: 0 %}
-                  {% if fchar == '/' or fchar == '#' %}
-                  <a href="{{checklist.href}}">{{checklist.subject}}</a>
-                  {% else %}
-                  <a href="{{checklist.href}}" target="_blank">{{checklist.subject}}</a>
-                  {% endif %}
-                {% else %}
-                <span>{{checklist.subject}}</span>
-                {% endif %}
-              </div>
-            </div>
-            <div class="p-row">
-              <div class="p-col">
-                <strong>{{checklist.status}}</strong>
-              </div>
-              <div class="p-col">
-                <strong>{{checklist.status_date}}</strong>
-              </div>
-            </div>
-          </div>
-          {% endfor %}
-        </div>
-      </div>
-    </div>
-    {% endif %}
-    {% if check_nsc.size > 0 %}
-    <div id="p-x-nsc" class="p-expandable">
-      <div class="p-row p-xcontrol" title="Display National Scholars competitive scholarship checklists" tabindex="0">
-        <h3 class="p-xlabel">Competitive National Scholars</h3>
-        {!xicon.svg!}
-      </div>
-      <div>
-        <div class="p-xdesc">
-          <div>
-            <!-- <p>Students with a 21 ACT/1060 SAT and a 3.0 GPA or those admitted test-optional with a 3.0 GPA are eligible to compete for an out-of-state scholarship. Students meeting criteria for our National Scholars Program award may compete for an enhancement to their award. The consideration for an enhancement award is based on a student-involvement r&eacute;sum&eacute;, high school grades, and rigor of high school curriculum.</p> -->
-          </div>
-          <p><a href="http://louisville.edu/admissions/cost-aid/scholarships/national-scholars-program" target="_blank">Learn more about the National Scholars Program</a></p>
-          <div>
-            <strong>Application Deadline:</strong>&nbsp;<span>December 15</span>
-          </div>
-        </div>
-        <div class="p-table">
-          {% for checklist in check_nsc %}
           <div class="p-tablerow">
             <div class="p-row">
               <img class="status-icon" src="/shared/{{checklist.image}}.png" alt="Status: {{checklist.status}}" title="Status: {{checklist.status}}">
@@ -771,10 +674,10 @@
       </div>
       <div>
         <div class="p-xdesc">
-          <p>The S-STEM scholarship program provides financial support to Computer Science and Engineering students with low-income and high academic potential. In addition to financial aid, participants will be engaged in a dynamic, application-oriented program that prepares students for cutting-edge research and professional challenges in fields including <strong>cyber-security</strong>, <strong>data science</strong>, and <strong>machine learning</strong>. These experiences will provide students with the tools necessary to compete in the modern scientific workforce. Both freshman and junior/transfer students who meet the prerequisites are eligible for this scholarship, and eligible students must enroll in the University of Louisville’s BS in Computer Science and Engineering (CSE) program.</p>
+          <p>The S-STEM scholarship program provides financial support to Computer Science and Engineering students with low-income and high academic potential. In addition to financial aid, participants will be engaged in a dynamic, application-oriented program that prepares students for cutting-edge research and professional challenges in fields including <strong>cyber-security</strong>, <strong>data science</strong>, and <strong>machine learning</strong>. These experiences will provide students with the tools necessary to compete in the modern scientific workforce. Both freshman and junior/transfer students who meet the prerequisites are eligible for this scholarship, and eligible students must enroll in the University of Louisville's BS in Computer Science and Engineering (CSE) program.</p>
           <p><a href="https://engineering.louisville.edu/academics/departments/computer/s-stem-scholarships-program/" target="_blank">Learn more about S-STEM scholarships</a></p>
           <div>
-            <!-- <strong>Application Deadline:</strong>&nbsp;<span>December 15</span> -->
+            <strong>Application Deadline:</strong>&nbsp;<span>December 15</span>
           </div>
         </div>
         <div class="p-table">
