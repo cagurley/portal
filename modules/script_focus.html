@@ -13,4 +13,10 @@
   $('.p-button a').on('mouseout focusout', function () {
     $(this).parent().removeClass('p-focus');
   });
+  $('.p-tile').on('mouseover focusin', function () {
+    $(this).addClass('p-focus');
+  });
+  $('.p-tile').on('mouseout focusout', function () {
+    $(this).removeClass('p-focus');
+  });
 </script>

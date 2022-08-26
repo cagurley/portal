@@ -1,8 +1,25 @@
-{% if base[0].hold == '1' %}
+{% if letters.size > 0 %}
 <div id="p-update" class="p-section">
+  <h2>Application Updates</h2>
+  {% if letters[0].callout == 1 %}
   <div class="p-row callout">
     <div class="callout-stripe"></div>
-    <div class="p-col callout-main"><a href="/apply/update">View Decision Letter</a></div>
+    <div class="p-col callout-main">You have a new update.</div>
+  </div>
+  {% endif %}
+  <div class="p-row">
+    {% for letter in letters %}
+    <div class="p-col bs-12 sm-6 md-4 lg-6" style="margin: 5px 0;">
+      <div class="p-tile">
+        {% if letter.received == 1 %}
+        {!lettericon_opened.svg!}
+        {% else %}
+        {!lettericon_closed.svg!}
+        {% endif %}
+        <a href="/apply/update?id={{letter.decision}}">{{letter.summary}}</a>
+      </div>
+    </div>
+    {% endfor %}
   </div>
 </div>
 {% endif %}
