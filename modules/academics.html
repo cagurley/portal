@@ -1,12 +1,13 @@
 <div id="p-academics" class="p-section">
   <h2>Test Scores and GPA</h2>
-  {% if base[0].type == 'FR' and act.size > 0 %}
+  {% if base[0].type == 'FR' or base[0].type == 'DC' %}
   <div class="p-expandable">
     <div class="p-row p-xcontrol" title="Display official ACT scores" tabindex="0">
       <h3 class="p-xlabel">ACT (Official)</h3>
       {!xicon.svg!}
     </div>
     <div class="p-table">
+      {% if act.size > 0 %}
       {% for score in act %}
       <div class="p-tablerow">
         <div class="p-row">
@@ -35,16 +36,22 @@
         </div>
       </div>
       {% endfor %}
+      {% else %}
+      <div class="p-tablerow">
+        <strong>Official scores not on file.</strong>
+      </div>
+      {% endif %}
     </div>
   </div>
   {% endif %}
-  {% if base[0].type == 'FR' and satr.size > 0 %}
+  {% if base[0].type == 'FR' or base[0].type == 'DC' %}
   <div class="p-expandable">
     <div class="p-row p-xcontrol" title="Display official SAT scores" tabindex="0">
       <h3 class="p-xlabel">SAT (Official)</h3>
       {!xicon.svg!}
     </div>
     <div class="p-table">
+      {% if satr.size > 0 %}
       {% for score in satr %}
       <div class="p-tablerow">
         <div class="p-row">
@@ -65,42 +72,21 @@
         </div>
       </div>
       {% endfor %}
-    </div>
-  </div>
-  {% endif %}
-  {% if ap.size > 0 %}
-  <div class="p-expandable">
-    <div class="p-row p-xcontrol" title="Display official AP scores" tabindex="0">
-      <h3 class="p-xlabel">AP (Official)</h3>
-      {!xicon.svg!}
-    </div>
-    <div class="p-table">
-      {% for score in ap %}
+      {% else %}
       <div class="p-tablerow">
-        <div class="p-row">
-          <div class="p-col"><strong>Subject</strong></div>
-          <div class="p-col"><strong>{{score.subtype}}</strong></div>
-        </div>
-        <div class="p-row">
-          <div class="p-col"><strong>Test Date</strong></div>
-          <div class="p-col"><strong>{{score.date}}</strong></div>
-        </div>
-        <div class="p-row">
-          <div class="p-col">Score</div>
-          <div class="p-col">{{score.total}}</div>
-        </div>
+        <strong>Official scores not on file.</strong>
       </div>
-      {% endfor %}
+      {% endif %}
     </div>
   </div>
   {% endif %}
-  {% if other_scores.size > 0 %}
   <div class="p-expandable">
     <div class="p-row p-xcontrol" title="Display other official scores" tabindex="0">
       <h3 class="p-xlabel">Other Tests (Official)</h3>
       {!xicon.svg!}
     </div>
     <div class="p-table">
+      {% if other_scores.size > 0 %}
       {% for score in other_scores %}
       <div class="p-tablerow">
         <div class="p-row">
@@ -123,16 +109,21 @@
         </div>
       </div>
       {% endfor %}
+      {% else %}
+      <div class="p-tablerow">
+        <strong>Official scores not on file.</strong>
+      </div>
+      {% endif %}
     </div>
   </div>
-  {% endif %}
-  {% if base[0].type == 'FR' and hs.size > 0 %}
+  {% if base[0].type == 'FR' or base[0].type == 'DC' %}
   <div class="p-expandable">
     <div class="p-row p-xcontrol" title="Display official cumulative high school GPAs" tabindex="0">
       <h3 class="p-xlabel">HS GPA (Official)</h3>
       {!xicon.svg!}
     </div>
     <div class="p-table">
+      {% if hs.size > 0 %}
       {% for school in hs %}
       <div class="p-tablerow">
         <div class="p-row">
@@ -141,17 +132,22 @@
         </div>
       </div>
       {% endfor %}
+      {% else %}
+      <div class="p-tablerow">
+        <strong>Official transcripts not on file.</strong>
+      </div>
+      {% endif %}
     </div>
   </div>
   {% endif %}
-  {% if base[0].type == 'FR' or base[0].type == 'TR' %}
+  {% if base[0].type == 'FR' or base[0].type == 'DC' or base[0].type == 'TR' %}
   <div class="p-expandable">
     <div class="p-row p-xcontrol" title="Display self-reported information" tabindex="0">
       <h3 class="p-xlabel">Self-Reported</h3>
       {!xicon.svg!}
     </div>
     <div class="p-table">
-      {% if base[0].type == 'FR' %}
+      {% if base[0].type == 'FR' or base[0].type == 'DC' %}
       <div class="p-tablerow">
         <div class="p-row">
           <div class="p-col">ACT</div>
@@ -181,7 +177,7 @@
     </div>
   </div>
   {% endif %}
-  {% if base[0].type == 'FR' %}
+  {% if base[0].type == 'FR' or base[0].type == 'DC' %}
   <span class="p-button">
     <a href="/apply/form?id=982d3236-7505-610e-293e-9ac12624240d" target="_blank">Update Self-Reported Test Scores or GPA</a>
   </span>
