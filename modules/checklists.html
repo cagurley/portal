@@ -1,7 +1,7 @@
 <div id="p-checklists" class="p-section">
   <h2>Your Checklists</h2>
   <ul class="p-row p-navtabs">
-    {% if base[0].admitted == '0' and check_app.size > 0 %}
+    {% if check_app.size > 0 %}
     <li id="p-appchecklist-tab" class="p-col p-tab" title="Display application checklists" tabindex="0"><span class="d-none-sm">App</span><span class="d-none d-initial-sm">Application</span></li>
     {% endif %}
     {% if check_comp[0].show == '1' %}
@@ -14,7 +14,7 @@
     <li id="p-ornchecklist-tab" class="p-col p-tab" title="Display orientation checklists" tabindex="0">Orientation</li>
     {% endif %}
   </ul>
-  {% if base[0].admitted == '0' and check_app.size > 0 %}
+  {% if check_app.size > 0 %}
   <div id="p-appchecklist-tabbed" class="p-tabbed">
     <p>Please complete the following <strong>Application Checklist</strong> items. Those marked with a red X are required and not yet completed. Some items may take 30-60 minutes to update.</p>
     <div class="p-table">
