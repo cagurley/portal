@@ -19,9 +19,6 @@
       {% if base[0].type == 'TR' or base[0].type == 'RE' or base[0].type == 'SD' %}
       <li><a href="https://louisville.edu/advising/centers" target="_blank">Contact Your Advisor</a></li>
       {% endif %}
-      {% if base[0].type == 'FR' or base[0].type == 'TR' %}
-      <li><a href="http://louisville.edu/newcards/student-technology-requirements" target="_blank">Technology Requirements</a></li>
-      {% endif %}
     {% else %}
       {% if base[0].type == 'FR' %}
       <li><a href="https://louisville.edu/admissions/office-of-admissions-faqs/#applying-to-uofl" target="_blank">Admissions FAQs</a></li>
@@ -42,9 +39,12 @@
       {% else %}
       <li><a href="http://louisville.edu/admissions/apply/i-am-a-post-baccalaureate-student" target="_blank">Requirements</a></li>
       {% endif %}
-      {% if base[0].type == 'FR' or base[0].type == 'TR' %}
-      <li><a href="http://louisville.edu/newcards/student-technology-requirements" target="_blank">Technology Requirements</a></li>
-      {% endif %}
+    {% endif %}
+    {% if base[0].type == 'FR' or base[0].type == 'TR' %}
+    <li><a href="http://louisville.edu/newcards/student-technology-requirements" target="_blank">Technology Requirements</a></li>
+    {% endif %}
+    {% if base[0].type == 'FR' or base[0].type == 'TR' or base[0].type == 'SD' or base[0].type == 'RE' %}
+    <li><a href="http://louisville.scholarshipuniverse.com" target="_blank">Scholarship Universe</a></li>
     {% endif %}
     {% if base[0].online == '1' %}
     <li><a href="http://louisville.edu/online/resources/future-students" target="_blank">Online Learning Resources</a></li>
