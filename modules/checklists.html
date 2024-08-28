@@ -574,6 +574,51 @@
       </div>
     </div>
     {% endif %}
+    {% if check_cob.size > 0 %}
+    <div id="p-x-cob" class="p-expandable">
+      <div class="p-row p-xcontrol" title="Display College of Business scholarships checklists" tabindex="0">
+        <h3 class="p-xlabel">College of Business Scholarships</h3>
+        {!xicon.svg!}
+      </div>
+      <div>
+        <div class="p-xdesc">
+          <p>A number of privately endowed scholarships allow College of Business students from Southern Indiana to acquire financial support for expenses ranging from textbook assistance to tuition. These scholarships provide a wide range of opportunities for students. Eligible applicants must be directly admitted to the College of Business and reside in Sothern Indiana. Providing all requested information ensures that you will be considered for any and all potential funding sources as appropriate.</p>
+          <div>
+            <strong>Application Deadline:</strong>&nbsp;<span>{{comp_dl[0].cob}}</span>
+          </div>
+        </div>
+        <div class="p-table">
+          {% for checklist in check_cob %}
+          <div class="p-tablerow">
+            <div class="p-row">
+              <img class="status-icon" src="/shared/{{checklist.image}}.png" alt="Status: {{checklist.status}}" title="Status: {{checklist.status}}">
+              <div class="p-col">
+                {% if checklist.href.size > 0 %}
+                  {% assign fchar = checklist.href | slice: 0 %}
+                  {% if fchar == '/' or fchar == '#' %}
+                  <a href="{{checklist.href}}">{{checklist.subject}}</a>
+                  {% else %}
+                  <a href="{{checklist.href}}" target="_blank">{{checklist.subject}}</a>
+                  {% endif %}
+                {% else %}
+                <span>{{checklist.subject}}</span>
+                {% endif %}
+              </div>
+            </div>
+            <div class="p-row">
+              <div class="p-col">
+                <strong>{{checklist.status}}</strong>
+              </div>
+              <div class="p-col">
+                <strong>{{checklist.status_date}}</strong>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+    {% endif %}
     {% if check_math.size > 0 %}
     <div id="p-x-math" class="p-expandable">
       <div class="p-row p-xcontrol" title="Display C. Coleman Petty Scholarship checklists" tabindex="0">
@@ -622,8 +667,8 @@
     {% endif %}
     {% if check_speed.size > 0 %}
     <div id="p-x-speed" class="p-expandable">
-      <div class="p-row p-xcontrol" title="Display Speed School scholarship checklists" tabindex="0">
-        <h3 class="p-xlabel">Speed Scholarship</h3>
+      <div class="p-row p-xcontrol" title="Display Speed School scholarships checklists" tabindex="0">
+        <h3 class="p-xlabel">Speed Scholarships</h3>
         {!xicon.svg!}
       </div>
       <div>
