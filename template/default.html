@@ -45,6 +45,9 @@
       </div>
       <div class="p-row p-mainrow">
         <div id="p-mc-primary" class="p-col p-maincol">
+          {% if notice.size > 0 and notice[0].declined == 1 %}
+          {!notice.html!}
+          {% endif %}
           {!update.html!}
           {!status.html!}
           {!checklists.html!}
