@@ -795,6 +795,13 @@
   {% endif %}
   {% if base[0].admitted == '1' and check_orn.size > 0 %}
   <div id="p-ornchecklist-tabbed" class="p-tabbed">
+    <div>
+      {% if addinfo[0].orn-reg == '0' %}
+      <strong>You are not currently registered for an orientation session.</strong>
+      {% else %}
+      <strong>Orientation Session:</strong>&nbsp;<span>{{addinfo[0].orn-date}}</span>
+      {% endif %}
+    </div>
     <p>Please complete the following <strong>Orientation Checklist</strong> items. Some items require forms, which are linked with the checklist below. Those marked with a red X are not yet completed. Some items may take 30-60 minutes to update.</p>
     <div class="p-table">
       {% for checklist in check_orn %}

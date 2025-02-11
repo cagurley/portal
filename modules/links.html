@@ -49,5 +49,8 @@
     {% if base[0].online == '1' %}
     <li><a href="http://louisville.edu/online/resources/future-students" target="_blank">Online Learning Resources</a></li>
     {% endif %}
+    {% if addinfo[0].dep-waiver == '1' %}
+    <li><a href="https://apply.louisville.edu/register/deposit_waiver" target="_blank">Deposit Waiver Request</a></li>
+    {% endif %}
   </ul>
 </div>
