@@ -2,52 +2,55 @@
   <h4>Helpful Links</h4>
   <ul class="link-list">
     {% if base[0].admitted == '1' %}
-      <li><a href="https://louisville.edu/admissions/activate" target="_blank">Activate Your Accounts</a></li>
+      <li><a href="https://louisville.edu/admissions/activate-your-accounts" target="_blank">Activate Your Accounts</a></li>
       {% if base[0].type == 'FR' %}
-      <li><a href="https://louisville.edu/newcards/first-year/first-time-freshman-checklist/freshman-checklist" target="_blank">First-time Freshman Guide</a></li>
-      <li><a href="https://louisville.edu/admissions/office-of-admissions-faqs/#admitted-students" target="_blank">Admitted Student FAQs</a></li>
+      <li><a href="https://louisville.edu/admissions/admitted-first-time-freshmen/first-time-freshman-guide" target="_blank">First-time Freshman Guide</a></li>
+      <li><a href="https://louisville.edu/admissions/apply/getting-help-faqs#accordion-2501" target="_blank">Admitted Student FAQs</a></li>
       {% elsif base[0].type == 'TR' %}
-      <li><a href="http://louisville.edu/newcards/transfer-students/checklist" target="_blank">Transfer &amp; Adult Guide</a></li>
-      <li><a href="https://louisville.edu/admissions/apply/transfer/faqs" target="_blank">Transfer &amp; Adult FAQs</a></li>
+      <li><a href="https://louisville.edu/admissions/admitted-transfer-students/transfer-adult-student-guide" target="_blank">Transfer &amp; Adult Guide</a></li>
+      <li><a href="https://louisville.edu/admissions/apply/getting-help-faqs#accordion-2616" target="_blank">Transfer &amp; Adult FAQs</a></li>
       {% elsif base[0].type == 'RE' %}
-      <li><a href="http://louisville.edu/newcards/returning/readmitted-student-to-do-list" target="_blank">Returning Student Guide</a></li>
+      <li><a href="https://louisville.edu/admissions/admitted-transfer-students/transfer-adult-student-guide" target="_blank">Returning Student Guide</a></li>
       {% elsif base[0].type == 'DC' %}
-      <li><a href="http://louisville.edu/admissions/apply/requirements/dual-credit-program" target="_blank">Dual Credit</a></li>
+      <li><a href="https://louisville.edu/admissions/apply/non-degree-applicants/dual-credit-students" target="_blank">Dual Credit</a></li>
       {% else %}
-      <li><a href="https://louisville.edu/newcards/nondegree/nondegree-student-to-do-list" target="_blank">Non-degree Guide</a></li>
+      <li><a href="https://louisville.edu/admissions/apply/non-degree-applicants" target="_blank">Non-degree Guide</a></li>
       {% endif %}
       {% if base[0].type == 'TR' or base[0].type == 'RE' or base[0].type == 'SD' %}
       <li><a href="https://louisville.edu/advising/centers" target="_blank">Contact Your Advisor</a></li>
       {% endif %}
     {% else %}
       {% if base[0].type == 'FR' %}
-      <li><a href="https://louisville.edu/admissions/office-of-admissions-faqs/#applying-to-uofl" target="_blank">Admissions FAQs</a></li>
+      <li><a href="https://louisville.edu/admissions/apply/getting-help-faqs#accordion-2421" target="_blank">Admissions FAQs</a></li>
       {% elsif base[0].type == 'TR' %}
-      <li><a href="https://louisville.edu/admissions/apply/transfer/faqs" target="_blank">Transfer &amp; Adult FAQs</a></li>
+      <li><a href="https://louisville.edu/admissions/apply/getting-help-faqs#accordion-2616" target="_blank">Transfer &amp; Adult FAQs</a></li>
       {% elsif base[0].type == 'RE' %}
-      <li><a href="http://louisville.edu/admissions/apply/i-am-a-returning-student" target="_blank">Returning Students</a></li>
+      <li><a href="https://louisville.edu/admissions/apply/returning-applicants" target="_blank">Returning Students</a></li>
       {% elsif base[0].type == 'SD' %}
-      <li><a href="http://louisville.edu/admissions/apply/transfer/admissions" target="_blank">Admissions Info</a></li>
+      <li><a href="https://louisville.edu/admissions/apply/transfer-applicants" target="_blank">Admissions Info</a></li>
       {% elsif base[0].type == 'DC' %}
-      <li><a href="http://louisville.edu/admissions/apply/requirements/dual-credit-program" target="_blank">Dual Credit</a></li>
+      <li><a href="https://louisville.edu/admissions/apply/non-degree-applicants/dual-credit-students" target="_blank">Dual Credit</a></li>
       {% elsif base[0].type == 'CS' %}
-      <li><a href="http://louisville.edu/admissions/apply/cs" target="_blank">Continuing Studies</a></li>
+      <li><a href="https://louisville.edu/admissions/apply/non-degree-applicants/continuing-studies" target="_blank">Continuing Studies</a></li>
       {% elsif base[0].type == 'CTE' %}
-      <li><a href="http://louisville.edu/admissions/apply/i-am-a-certificate-student" target="_blank">Certificates</a></li>
+      <li><a href="https://louisville.edu/admissions/apply/non-degree-applicants/certificate-students" target="_blank">Certificates</a></li>
       {% elsif base[0].type == 'VI' %}
-      <li><a href="http://louisville.edu/admissions/apply/requirements/college-visitor-requirements" target="_blank">Requirements</a></li>
+      <li><a href="https://louisville.edu/admissions/apply/non-degree-applicants/certificate-students" target="_blank">Requirements</a></li>
       {% else %}
-      <li><a href="http://louisville.edu/admissions/apply/i-am-a-post-baccalaureate-student" target="_blank">Requirements</a></li>
+      <li><a href="https://louisville.edu/admissions/apply/non-degree-applicants/post-baccalaureate-students" target="_blank">Requirements</a></li>
       {% endif %}
     {% endif %}
     {% if base[0].type == 'FR' or base[0].type == 'TR' %}
-    <li><a href="http://louisville.edu/newcards/student-technology-requirements" target="_blank">Technology Requirements</a></li>
+    <li><a href="https://louisville.edu/admissions/student-technology-requirements" target="_blank">Technology Requirements</a></li>
     {% endif %}
     {% if base[0].type == 'FR' or base[0].type == 'TR' or base[0].type == 'SD' or base[0].type == 'RE' %}
-    <li><a href="http://louisville.scholarshipuniverse.com" target="_blank">Scholarship Universe</a></li>
+    <li><a href="https://louisville.scholarshipuniverse.com" target="_blank">Scholarship Universe</a></li>
+    {% endif %}
+    {% if base[0].type == 'FR' %}
+    <li><a href="/register/major-change-25" target="_blank">Request a Major Change</a></li>
     {% endif %}
     {% if base[0].online == '1' %}
-    <li><a href="http://louisville.edu/online/resources/future-students" target="_blank">Online Learning Resources</a></li>
+    <li><a href="https://louisville.edu/online/resources/future-students" target="_blank">Online Learning Resources</a></li>
     {% endif %}
     {% if addinfo[0].dep-waiver == '1' %}
     <li><a href="https://apply.louisville.edu/register/deposit_waiver" target="_blank">Deposit Waiver Request</a></li>
