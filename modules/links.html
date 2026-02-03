@@ -46,14 +46,14 @@
     <!-- {% if base[0].type == 'FR' or base[0].type == 'TR' or base[0].type == 'SD' or base[0].type == 'RE' %}
     <li><a href="https://louisville.scholarshipuniverse.com" target="_blank">Scholarship Universe</a></li>
     {% endif %} -->
-    {% if base[0].type == 'FR' %}
-    <li><a href="/register/major-change-25" target="_blank">Request a Major Change</a></li>
+    {% if base[0].type == 'FR' or base[0].type == 'TR' or base[0].type == 'RE' or base[0].type == 'SD' %}
+    <li><a href="/register/major_change_request" target="_blank">Request a Major Change</a></li>
     {% endif %}
     {% if base[0].online == '1' %}
     <li><a href="https://louisville.edu/online/resources/future-students" target="_blank">Online Learning Resources</a></li>
     {% endif %}
     {% if addinfo[0].dep-waiver == '1' %}
-    <li><a href="https://apply.louisville.edu/register/deposit_waiver" target="_blank">Deposit Waiver Request</a></li>
+    <li><a href="/register/deposit_waiver" target="_blank">Deposit Waiver Request</a></li>
     {% endif %}
   </ul>
 </div>

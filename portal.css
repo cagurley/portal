@@ -263,6 +263,10 @@
   padding-bottom: 20px;
 }
 
+.p-page .p-maincol, .p-page .bs-6 {
+  flex: 0 0 50%;
+}
+
 .p-page .p-maincol, .p-page .bs-12 {
   flex: 0 0 100%;
 }
@@ -406,6 +410,10 @@
 
   .p-page .d-initial-sm {
     display: initial;
+  }
+
+  .p-page .sm-4 {
+    flex: 0 0 calc(100% / 3);
   }
 
   .p-page .sm-6 {
