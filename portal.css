@@ -109,7 +109,7 @@
   background-color: #003A57;
 }
 
-.p-page .p-button * {
+#slate_uol .p-page .p-button * {
   color: inherit !important;
   text-decoration: inherit;
 }
