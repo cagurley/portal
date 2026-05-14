@@ -1,15 +1,11 @@
-#page > .c_container-fixed.cr {
-  max-width: none;
-}
-
-#content {
+#slate_uol .grid-container {
   background: #FFF !important;
   padding: 0;
 }
 
-#content table.fixed > tbody > tr > td {
-  padding: 0 !important;
-  margin: 0;
+.dialog {
+  max-height: 75vh;
+  overflow-y: auto;
 }
 
 #p-main.p-page {
