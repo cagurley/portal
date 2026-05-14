@@ -1,5 +1,5 @@
-#slate_uol .grid-container {
-  background: #FFF !important;
+main .grid-container{
+  max-width: none;
   padding: 0;
 }
 
@@ -8,7 +8,7 @@
   overflow-y: auto;
 }
 
-#p-main.p-page {
+#p-main.p-page, #p-main.p-page select {
   color: #000;
   font-family: "Gotham SSm A", "Gotham SSm B", "Open Sans", Helvetica, Arial, sans-serif;
   font-weight: 300;
@@ -164,6 +164,7 @@
 
 #p-main.p-page .p-tile {
   display: inline-block;
+  box-sizing: border-box;
   height: 100%;
   width: 100%;
   background-color: #ECECEC;
