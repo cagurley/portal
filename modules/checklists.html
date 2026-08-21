@@ -16,7 +16,7 @@
   </ul>
   {% if check_app.size > 0 %}
   <div id="p-appchecklist-tabbed" class="p-tabbed">
-    <p>Please complete the following <strong>Application Checklist</strong> items. Those marked with a red X are required and not yet completed. Some items may take 30-60 minutes to update.</p>
+    <p>Please complete the following <strong>Application Checklist</strong> items. Those marked with a red X are not yet completed. Some items may take 30-60 minutes to update.</p>
     <div class="p-table">
       {% for checklist in check_app %}
       <div class="p-tablerow">
@@ -157,7 +157,7 @@
       </div>
     </div>
     {% endif %}
-    {% if check_porter.size > 1 %}
+    <!-- {% if check_porter.size > 1 %}
     <div id="p-x-porter" class="p-expandable">
       <div class="p-row p-xcontrol" title="Display Woodford R. Porter Scholarship checklists" tabindex="0">
         <h3 class="p-xlabel">Porter Scholarship</h3>
@@ -205,7 +205,7 @@
         </div>
       </div>
     </div>
-    {% endif %}
+    {% endif %} -->
     {% if check_ds.size > 0 %}
     <div id="p-x-ds" class="p-expandable">
       <div class="p-row p-xcontrol" title="Display Kentucky Dataseam Scholarship checklists" tabindex="0">
@@ -222,53 +222,6 @@
         </div>
         <div class="p-table">
           {% for checklist in check_ds %}
-          <div class="p-tablerow">
-            <div class="p-row">
-              <img class="status-icon" src="/shared/{{checklist.image}}.png" alt="Status: {{checklist.status}}" title="Status: {{checklist.status}}">
-              <div class="p-col">
-                {% if checklist.href.size > 0 %}
-                  {% assign fchar = checklist.href | slice: 0 %}
-                  {% if fchar == '/' or fchar == '#' %}
-                  <a href="{{checklist.href}}">{{checklist.subject}}</a>
-                  {% else %}
-                  <a href="{{checklist.href}}" target="_blank">{{checklist.subject}}</a>
-                  {% endif %}
-                {% else %}
-                <span>{{checklist.subject}}</span>
-                {% endif %}
-              </div>
-            </div>
-            <div class="p-row">
-              <div class="p-col">
-                <strong>{{checklist.status}}</strong>
-              </div>
-              <div class="p-col">
-                <strong>{{checklist.status_date}}</strong>
-              </div>
-            </div>
-          </div>
-          {% endfor %}
-        </div>
-      </div>
-    </div>
-    {% endif %}
-    {% if check_bf.size > 0 %}
-    <div id="p-x-bf" class="p-expandable">
-      <div class="p-row p-xcontrol" title="Display Brown Fellows Program checklists" tabindex="0">
-        <h3 class="p-xlabel">Brown Fellows</h3>
-        {!xicon.svg!}
-      </div>
-      <div>
-        <div class="p-xdesc">
-          <p>Brown Fellows is a prestigious scholarship program designed to support students' unique personal, academic, and career goals while producing outstanding ambassadors for the state of Kentucky.</p>
-          <p>The program provides a diverse group of students the opportunity to build leadership skills through academic enrichment, expanded opportunity, and personal accountability. It is open to residents and non-residents of Kentucky with a 26 ACT or 1230 SAT and 3.5 GPA. Ten Fellows are selected each year. Recipients will have diverse academic interests; demonstrate that they are well-rounded; and show evidence of leadership potential. The scholarship award will include full tuition, room, board, and an allowance for books. In addition, each Fellow applies for funding from the Brown Foundation to support their individual enrichment plan, which can consist of specialized study, research, internships, service, or other opportunities that advance the student toward his or her goals. Individual enrichment funding can be up to $6,000 per project.</p>
-          <!-- <p><a href="" target="_blank">Learn more about the Brown Fellows Program</a></p> -->
-          <div>
-            <strong>Application Deadline:</strong>&nbsp;<span>{{comp_dl[0].bf}}{{comp_dl[0].dl_text}}</span>
-          </div>
-        </div>
-        <div class="p-table">
-          {% for checklist in check_bf %}
           <div class="p-tablerow">
             <div class="p-row">
               <img class="status-icon" src="/shared/{{checklist.image}}.png" alt="Status: {{checklist.status}}" title="Status: {{checklist.status}}">
@@ -579,7 +532,7 @@
       </div>
     </div>
     {% endif %}
-    {% if check_cob.size > 0 %}
+    <!-- {% if check_cob.size > 0 %}
     <div id="p-x-cob" class="p-expandable">
       <div class="p-row p-xcontrol" title="Display College of Business scholarships checklists" tabindex="0">
         <h3 class="p-xlabel">College of Business Scholarships</h3>
@@ -623,7 +576,7 @@
         </div>
       </div>
     </div>
-    {% endif %}
+    {% endif %} -->
     {% if check_math.size > 0 %}
     <div id="p-x-math" class="p-expandable">
       <div class="p-row p-xcontrol" title="Display C. Coleman Petty Scholarship checklists" tabindex="0">
